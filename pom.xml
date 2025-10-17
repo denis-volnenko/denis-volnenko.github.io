@@ -9,18 +9,6 @@
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
-    <scm>
-        <url>git@github.com:denis-volnenko/denis-volnenko.github.io.git</url>
-    </scm>
-
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
     <developers>
         <developer>
             <id>volnenko</id>
@@ -33,34 +21,10 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <extension.wagon.groupId>org.apache.maven.wagon</extension.wagon.groupId>
-        <extension.wagon.artifactId>wagon-webdav-jackrabbit</extension.wagon.artifactId>
-        <extension.wagon.version>3.5.2</extension.wagon.version>
-
-        <deploy.branch.name>test</deploy.branch.name>
-        <deploy.repository.name>denis-volnenko.github.io</deploy.repository.name>
-        <deploy.repository.owner>denis-volnenko</deploy.repository.owner>
     </properties>
-
-    <distributionManagement>
-        <repository>
-            <id>internal.repo</id>
-            <name>Temporary Staging Repository</name>
-            <url>file://${project.basedir}/target/repo</url>
-        </repository>
-    </distributionManagement>
 
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.8.2</version>
-                <configuration>
-                    <altDeploymentRepository>
-                        internal.repo::default::file://${project.basedir}/target/repo
-                    </altDeploymentRepository>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
