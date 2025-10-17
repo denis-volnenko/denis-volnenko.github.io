@@ -1,3 +1,5 @@
 # DENIS VOLNENKO
 
 ## АРХИТЕКТУРНАЯ ДОКУМЕНТАЦИЯ
+
+xref:page-arch-as-code.adoc[Архитектура как код]
