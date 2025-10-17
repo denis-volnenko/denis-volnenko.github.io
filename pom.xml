@@ -37,44 +37,38 @@
         <extension.wagon.artifactId>wagon-webdav-jackrabbit</extension.wagon.artifactId>
         <extension.wagon.version>3.5.2</extension.wagon.version>
 
-        <deploy.branch.name>main</deploy.branch.name>
+        <deploy.branch.name>test</deploy.branch.name>
         <deploy.repository.name>denis-volnenko.github.io</deploy.repository.name>
         <deploy.repository.owner>denis-volnenko</deploy.repository.owner>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>internal.repo</id>
+            <name>Temporary Staging Repository</name>
+            <url>file://${project.basedir}/target/repo</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
-                <groupId>com.github.github</groupId>
-                <artifactId>site-maven-plugin</artifactId>
-                <version>0.12</version>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
                 <configuration>
-                    <!-- Коммит-месседж при пуше коммитов (TODO: опционально измененить) -->
-                    <message>${project.groupId}:${project.artifactId}:${project.version}</message>
-                    <noJekyll>true</noJekyll>
-                    <outputDirectory>${project.basedir}/target/generated-docs</outputDirectory>
-                    <branch>refs/heads/${deploy.branch.name}</branch>
-                    <includes>
-                        <include>*/**</include>
-                    </includes>
-                    <merge>true</merge>
-                    <repositoryName>${deploy.repository.name}</repositoryName>
-                    <repositoryOwner>${deploy.repository.owner}</repositoryOwner>
-                    <server>github</server>
+                    <altDeploymentRepository>
+                        internal.repo::default::file://${project.basedir}/target/repo
+                    </altDeploymentRepository>
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>site</goal>
-                        </goals>
-                        <phase>deploy</phase>
-                    </execution>
-                </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
                 <version>2.2.6</version>
+                <configuration>
+                    <outputDirectory>${project.basedir}</outputDirectory>
+                </configuration>
                 <executions>
                     <execution>
                         <id>convert-to-html</id>
