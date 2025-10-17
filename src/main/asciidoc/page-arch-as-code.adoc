@@ -264,10 +264,15 @@
 /data/my-project/.git # Папка git-репозитория
 /data/my-project/pom.xml # Проект Apache Maven
 /data/my-project/src/main/asciidoc/index.adoc # Документ Asciidoc
-/data/my-project/src/main/asciidoc/database.adoc # Сгенерированное описание базы данных
 /data/my-project/src/main/resources/database/task.yaml # Описание таблицы "app_task"
 /data/my-project/src/main/resources/database/project.yaml Описание таблицы "app_project"
 /data/my-project/src/main/resources/database/status_type.yaml Описание перечисления "status_type"
+
+/data/my-project/src/main/asciidoc/database.adoc # Сгенерированное описание базы данных
+/data/my-project/src/main/asciidoc/erd_logic.puml # Сгенерированная логическая схема в Plantuml
+/data/my-project/src/main/asciidoc/erd_logic.svg # Скомпилированная логическая схема в SVG
+/data/my-project/src/main/asciidoc/erd_physic.puml # Сгенерированная физическая схема в Plantuml
+/data/my-project/src/main/asciidoc/erd_physic.svg # Скомпилированная физическая схема в SVG
 ----
 
 *Файл "project.yaml"*
@@ -287,7 +292,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: varchar(64)
+                  type: uuid
                   autoIncrement: true
                   remarks: Уникальный код
                   constraints:

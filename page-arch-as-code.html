@@ -833,10 +833,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <pre>/data/my-project/.git # Папка git-репозитория
 /data/my-project/pom.xml # Проект Apache Maven
 /data/my-project/src/main/asciidoc/index.adoc # Документ Asciidoc
-/data/my-project/src/main/asciidoc/database.adoc # Сгенерированное описание базы данных
 /data/my-project/src/main/resources/database/task.yaml # Описание таблицы "app_task"
 /data/my-project/src/main/resources/database/project.yaml Описание таблицы "app_project"
-/data/my-project/src/main/resources/database/status_type.yaml Описание перечисления "status_type"</pre>
+/data/my-project/src/main/resources/database/status_type.yaml Описание перечисления "status_type"
+
+/data/my-project/src/main/asciidoc/database.adoc # Сгенерированное описание базы данных
+/data/my-project/src/main/asciidoc/erd_logic.puml # Сгенерированная логическая схема в Plantuml
+/data/my-project/src/main/asciidoc/erd_logic.svg # Скомпилированная логическая схема в SVG
+/data/my-project/src/main/asciidoc/erd_physic.puml # Сгенерированная физическая схема в Plantuml
+/data/my-project/src/main/asciidoc/erd_physic.svg # Скомпилированная физическая схема в SVG</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -858,7 +863,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: varchar(64)
+                  type: uuid
                   autoIncrement: true
                   remarks: Уникальный код
                   constraints:
@@ -1006,7 +1011,7 @@ databaseChangeLog:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-18 02:15:45 +0400
+Last updated 2025-10-18 02:25:04 +0400
 </div>
 </div>
 </body>

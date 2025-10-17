@@ -12,7 +12,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: varchar(64)
+                  type: uuid
                   autoIncrement: true
                   remarks: Уникальный код
                   constraints:
