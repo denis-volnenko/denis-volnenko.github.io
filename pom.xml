@@ -30,12 +30,61 @@
     </developers>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <extension.wagon.groupId>org.apache.maven.wagon</extension.wagon.groupId>
         <extension.wagon.artifactId>wagon-webdav-jackrabbit</extension.wagon.artifactId>
         <extension.wagon.version>3.5.2</extension.wagon.version>
+
+        <deploy.branch.name>main</deploy.branch.name>
+        <deploy.repository.name>denis-volnenko.github.io</deploy.repository.name>
+        <deploy.repository.owner>denis-volnenko</deploy.repository.owner>
     </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.12</version>
+                <configuration>
+                    <!-- Коммит-месседж при пуше коммитов (TODO: опционально измененить) -->
+                    <message>${project.groupId}:${project.artifactId}:${project.version}</message>
+                    <noJekyll>true</noJekyll>
+                    <outputDirectory>${project.basedir}/target/generated-docs</outputDirectory>
+                    <branch>refs/heads/${deploy.branch.name}</branch>
+                    <includes>
+                        <include>*/**</include>
+                    </includes>
+                    <merge>true</merge>
+                    <repositoryName>${deploy.repository.name}</repositoryName>
+                    <repositoryOwner>${deploy.repository.owner}</repositoryOwner>
+                    <server>github</server>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>deploy</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>2.2.6</version>
+                <executions>
+                    <execution>
+                        <id>convert-to-html</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
