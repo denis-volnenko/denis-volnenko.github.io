@@ -60,5 +60,70 @@
 
 * Наличие неявных ограничений технологий при создании текстового описания и графических изображений.
 
+## 2.1. Языки разметки
 
+### 2.1.1. Верстка текста
 
+* HTML
+
+* Wiki
+
+* MarkDown
+
+* Asciidoc
+
+* Tex
+
+### 2.1.2. Верстка изображений
+
+* Plantuml
+
+* GraphViz
+
+## 3. Организация рабочего пространства
+
+### 3.1.1. Структура проекта
+
+----
+/data/my-project/.git # Папка git-репозитория
+/data/my-project/pom.xml # Проект Apache Maven
+/data/my-project/src/main/asciidoc/index.adoc # Документ Asciidoc
+----
+
+### Файл "pom.xml"
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ru.volnenko.doc</groupId>
+    <artifactId>my-project</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>2.2.6</version>
+                <executions>
+                    <execution>
+                        <id>convert-to-html</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+----

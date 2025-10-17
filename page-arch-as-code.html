@@ -445,6 +445,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_1_2_doc_as_code_документация_как_код">1.2. DOC AS CODE (документация как код)</a></li>
 </ul>
 </li>
+<li><a href="#_2_1_языки_разметки">2.1. Языки разметки</a>
+<ul class="sectlevel2">
+<li><a href="#_2_1_1_верстка_текста">2.1.1. Верстка текста</a></li>
+<li><a href="#_2_1_2_верстка_изображений">2.1.2. Верстка изображений</a></li>
+</ul>
+</li>
+<li><a href="#_3_организация_рабочего_пространства">3. Организация рабочего пространства</a>
+<ul class="sectlevel2">
+<li><a href="#_3_1_1_структура_проекта">3.1.1. Структура проекта</a></li>
+<li><a href="#_файл_pom_xml">Файл "pom.xml"</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -546,10 +558,104 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_2_1_языки_разметки">2.1. Языки разметки</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_2_1_1_верстка_текста">2.1.1. Верстка текста</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>HTML</p>
+</li>
+<li>
+<p>Wiki</p>
+</li>
+<li>
+<p>MarkDown</p>
+</li>
+<li>
+<p>Asciidoc</p>
+</li>
+<li>
+<p>Tex</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_1_2_верстка_изображений">2.1.2. Верстка изображений</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Plantuml</p>
+</li>
+<li>
+<p>GraphViz</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_организация_рабочего_пространства">3. Организация рабочего пространства</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_3_1_1_структура_проекта">3.1.1. Структура проекта</h3>
+<div class="listingblock">
+<div class="content">
+<pre>/data/my-project/.git # Папка git-репозитория
+/data/my-project/pom.xml # Проект Apache Maven
+/data/my-project/src/main/asciidoc/index.adoc # Документ Asciidoc</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_файл_pom_xml">Файл "pom.xml"</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;ru.volnenko.doc&lt;/groupId&gt;
+    &lt;artifactId&gt;my-project&lt;/artifactId&gt;
+    &lt;version&gt;1.0.0&lt;/version&gt;
+    &lt;packaging&gt;pom&lt;/packaging&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+                &lt;artifactId&gt;asciidoctor-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;2.2.6&lt;/version&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;id&gt;convert-to-html&lt;/id&gt;
+                        &lt;phase&gt;generate-resources&lt;/phase&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;process-asciidoc&lt;/goal&gt;
+                        &lt;/goals&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+&lt;/project&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-18 00:30:25 +0400
+Last updated 2025-10-18 00:54:12 +0400
 </div>
 </div>
 </body>
