@@ -825,7 +825,177 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect2">
 <h3 id="_4_3_настройка_генерации_документации_базы_данных">4.3. Настройка генерации документации базы данных</h3>
-
+<div class="paragraph">
+<p><strong>Структура проекта</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>/data/my-project/.git # Папка git-репозитория
+/data/my-project/pom.xml # Проект Apache Maven
+/data/my-project/src/main/asciidoc/index.adoc # Документ Asciidoc
+/data/my-project/src/main/asciidoc/database.adoc # Сгенерированное описание базы данных
+/data/my-project/src/main/resources/database/task.yaml # Описание таблицы "app_task"
+/data/my-project/src/main/resources/database/project.yaml Описание таблицы "app_project"
+/data/my-project/src/main/resources/database/status_type.yaml Описание перечисления "status_type"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Файл "project.yaml"</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>---
+databaseChangeLog:
+  - changeSet:
+      id: project
+      author: liquibase
+      changes:
+        - createTable:
+            schemaName: public
+            catalogName: tm
+            tableName: app_project
+            remarks: Проект
+            columns:
+              - column:
+                  name: id
+                  type: varchar(64)
+                  autoIncrement: true
+                  remarks: Уникальный код
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: text
+                  remarks: Название
+                  defaultValue: ""
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: text
+                  remarks: Описание
+                  defaultValue: ""
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status_type
+                  type: text
+                  remarks: Статус
+                  defaultValue: "NOT_STARTED"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created
+                  type: timestampz
+                  remarks: Дата создания
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated
+                  type: timestampz
+                  remarks: Дата обновления
+                  constraints:
+                    nullable: false</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Файл "task.yaml"</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>---
+databaseChangeLog:
+- changeSet:
+    id: task
+    author: liquibase
+    changes:
+      - createTable:
+          schemaName: public
+          catalogName: tm
+          tableName: app_task
+          remarks: Задачи
+          columns:
+            - column:
+                name: id
+                type: uuid
+                remarks: Уникальный код
+                autoIncrement: true
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: name
+                type: text
+                remarks: Название
+                defaultValue: ""
+                constraints:
+                  nullable: false
+            - column:
+                name: description
+                type: text
+                remarks: Описание
+                defaultValue: ""
+                constraints:
+                  nullable: false
+            - column:
+                name: status_type
+                type: text
+                remarks: Статус
+                defaultValue: "NOT_STARTED"
+                constraints:
+                  nullable: false
+            - column:
+                name: project_id
+                type: uuid
+                remarks: Код проекта
+                constraints:
+                  foreignKey:
+                    referencedColumnNames: id
+                    referencedTableName: app_project
+                  nullable: false
+            - column:
+                name: created
+                type: timestampz
+                remarks: Дата создания
+                constraints:
+                  nullable: false
+            - column:
+                name: updated
+                type: timestampz
+                remarks: Дата обновления
+                constraints:
+                  nullable: false</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Файл "status_type.yaml"</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>---
+databaseChangeLog:
+- changeSet:
+    id: status_type
+    author: denis.volnenko
+    changes:
+      - createType:
+          schemaName: public
+          catalogName: tm
+          typeName: status_type
+          remarks: Статус
+          values:
+            - value:
+                name: NOT_STARTED
+                remarks: Не начато
+            - value:
+                name: IN_PROGRESS
+                remarks: В процессе
+            - value:
+                name: COMPLETE
+                remarks: Завершено</pre>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_4_4_настройка_генерации_документации_rest_api">4.4. Настройка генерации документации rest api</h3>
@@ -836,7 +1006,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-18 01:59:20 +0400
+Last updated 2025-10-18 02:15:45 +0400
 </div>
 </div>
 </body>

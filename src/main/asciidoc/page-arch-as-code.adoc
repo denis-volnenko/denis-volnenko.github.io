@@ -258,4 +258,167 @@
 
 ### 4.3. Настройка генерации документации базы данных
 
+*Структура проекта*
+
+----
+/data/my-project/.git # Папка git-репозитория
+/data/my-project/pom.xml # Проект Apache Maven
+/data/my-project/src/main/asciidoc/index.adoc # Документ Asciidoc
+/data/my-project/src/main/asciidoc/database.adoc # Сгенерированное описание базы данных
+/data/my-project/src/main/resources/database/task.yaml # Описание таблицы "app_task"
+/data/my-project/src/main/resources/database/project.yaml Описание таблицы "app_project"
+/data/my-project/src/main/resources/database/status_type.yaml Описание перечисления "status_type"
+----
+
+*Файл "project.yaml"*
+
+----
+---
+databaseChangeLog:
+  - changeSet:
+      id: project
+      author: liquibase
+      changes:
+        - createTable:
+            schemaName: public
+            catalogName: tm
+            tableName: app_project
+            remarks: Проект
+            columns:
+              - column:
+                  name: id
+                  type: varchar(64)
+                  autoIncrement: true
+                  remarks: Уникальный код
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: text
+                  remarks: Название
+                  defaultValue: ""
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: text
+                  remarks: Описание
+                  defaultValue: ""
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status_type
+                  type: text
+                  remarks: Статус
+                  defaultValue: "NOT_STARTED"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created
+                  type: timestampz
+                  remarks: Дата создания
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated
+                  type: timestampz
+                  remarks: Дата обновления
+                  constraints:
+                    nullable: false
+----
+
+*Файл "task.yaml"*
+
+----
+---
+databaseChangeLog:
+- changeSet:
+    id: task
+    author: liquibase
+    changes:
+      - createTable:
+          schemaName: public
+          catalogName: tm
+          tableName: app_task
+          remarks: Задачи
+          columns:
+            - column:
+                name: id
+                type: uuid
+                remarks: Уникальный код
+                autoIncrement: true
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: name
+                type: text
+                remarks: Название
+                defaultValue: ""
+                constraints:
+                  nullable: false
+            - column:
+                name: description
+                type: text
+                remarks: Описание
+                defaultValue: ""
+                constraints:
+                  nullable: false
+            - column:
+                name: status_type
+                type: text
+                remarks: Статус
+                defaultValue: "NOT_STARTED"
+                constraints:
+                  nullable: false
+            - column:
+                name: project_id
+                type: uuid
+                remarks: Код проекта
+                constraints:
+                  foreignKey:
+                    referencedColumnNames: id
+                    referencedTableName: app_project
+                  nullable: false
+            - column:
+                name: created
+                type: timestampz
+                remarks: Дата создания
+                constraints:
+                  nullable: false
+            - column:
+                name: updated
+                type: timestampz
+                remarks: Дата обновления
+                constraints:
+                  nullable: false
+----
+
+*Файл "status_type.yaml"*
+
+----
+---
+databaseChangeLog:
+- changeSet:
+    id: status_type
+    author: denis.volnenko
+    changes:
+      - createType:
+          schemaName: public
+          catalogName: tm
+          typeName: status_type
+          remarks: Статус
+          values:
+            - value:
+                name: NOT_STARTED
+                remarks: Не начато
+            - value:
+                name: IN_PROGRESS
+                remarks: В процессе
+            - value:
+                name: COMPLETE
+                remarks: Завершено
+----
+
 ### 4.4. Настройка генерации документации rest api
