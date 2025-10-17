@@ -89,9 +89,64 @@
 
 * GraphViz
 
-## 3. Организация рабочего пространства
+## 3. Используемый стек технологий
 
-### 3.1. Минимальная структура проекта
+[cols="0,100"]
+|===
+
+|01.
+|Git
+
+|02.
+|Java 21
+
+|03.
+|Apache Maven 3
+
+|04.
+|Plantuml
+
+|05.
+|https://www.jetbrains.com/idea/download/[IntelliJ IDEA (Community)]
+
+|06.
+|Plantuml Plugin (IntelliJ IDEA)
+
+|07.
+|Asciidoc Plugin (IntelliJ IDEA)
+
+|08.
+|Diagram.net Plugin (IntelliJ IDEA)
+
+|09.
+|Asciidoc
+
+|10.
+|asciidoctor-maven-plugin
+
+|11.
+|Confluence
+
+|12.
+|confluence-maven-plugin
+
+|13.
+|https://www.liquibase.com[Liquibase]
+
+|14.
+|liquibase-maven-plugin
+
+|15.
+|OpenAPI
+
+|16.
+|openapi-maven-plugin
+
+|===
+
+## 4. Организация рабочего пространства
+
+### 4.1. Минимальная структура проекта
 
 *Структура проекта*
 
@@ -143,4 +198,52 @@
 
 ----
 # Hello World!
+----
+
+### 4.2. Публикация в Confluence
+
+*Структура проекта*
+
+----
+/data/my-project/.git # Папка git-репозитория
+/data/my-project/pom.xml # Проект Apache Maven
+/data/my-project/src/main/asciidoc/index.adoc # Документ Asciidoc
+----
+
+*Файл "pom.xml"*
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ru.volnenko.doc</groupId>
+    <artifactId>my-project</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>2.2.6</version>
+                <executions>
+                    <execution>
+                        <id>convert-to-html</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
 ----
