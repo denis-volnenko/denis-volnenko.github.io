@@ -223,6 +223,8 @@
 /data/my-project/.git # Папка git-репозитория
 /data/my-project/pom.xml # Проект Apache Maven
 /data/my-project/src/main/asciidoc/index.adoc # Документ Asciidoc
+
+/Users/username/.m2/settings.xml # Файл с настройками Apache Maven
 ----
 
 .*pom.xml*
@@ -293,7 +295,7 @@
 ----
 /data/my-project/.git # Папка git-репозитория
 /data/my-project/pom.xml # Проект Apache Maven
-/data/my-project/src/main/asciidoc/index.adoc # Документ Asciidoc
+/data/my-project/src/main/asciidoc/archdoc.adoc # Документ Asciidoc
 /data/my-project/src/main/resources/database/task.yaml # Описание таблицы "app_task"
 /data/my-project/src/main/resources/database/project.yaml Описание таблицы "app_project"
 /data/my-project/src/main/resources/database/status_type.yaml Описание перечисления "status_type"
@@ -462,6 +464,19 @@ databaseChangeLog:
             - value:
                 name: COMPLETE
                 remarks: Завершено
+----
+====
+
+.*archdoc.adoc*
+[%collapsible]
+====
+[source,asciidoc]
+----
+ # АРХИТЕКТУРНЫЙ ДОКУМЕНТ
+ :toc:
+ :toc-title: Содержание
+
+ include::database.adoc[]
 ----
 ====
 
