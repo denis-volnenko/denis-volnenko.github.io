@@ -1,0 +1,21 @@
+components:
+  schemas:
+    ErrorDto:
+      type: object
+      title: Ошибка
+      description: Ошибка
+      required:
+        - success
+      properties:
+        success:
+          type: boolean
+          title: Результат выполнения
+          description: Результат выполнения
+        message:
+          type: string
+          title: Сообщение об ошибке
+          description: Сообщение об ошибке
+        errorCode:
+          type: string
+          title: Код ошибки
+          description: Код ошибки

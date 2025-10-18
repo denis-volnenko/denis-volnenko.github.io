@@ -687,7 +687,17 @@ pre.rouge {
 <li><a href="#_перечисление_status_type">Перечисление "status_type"</a></li>
 </ul>
 </li>
-<li><a href="#_пример_описания_веб_сервисов">Пример описания веб-сервисов</a></li>
+<li><a href="#_пример_описания_веб_сервисов">Пример описания веб-сервисов</a>
+<ul class="sectlevel2">
+<li><a href="#_ресурс_project_get_apiv1projectall">Ресурс (project) GET "/api/v1/project/all/"</a></li>
+<li><a href="#_ресурс_project_get_apiv1projectoneprojectid">Ресурс (project) GET "/api/v1/project/one/{projectId}/"</a></li>
+<li><a href="#_ресурс_task_get_apiv1taskall">Ресурс (task) GET "/api/v1/task/all/"</a></li>
+<li><a href="#_ресурс_task_get_apiv1taskonetaskid">Ресурс (task) GET "/api/v1/task/one/{taskId}/"</a></li>
+<li><a href="#ErrorDto">Модель данных "ErrorDto"</a></li>
+<li><a href="#ProjectDto">Модель данных "ProjectDto"</a></li>
+<li><a href="#TaskDto">Модель данных "TaskDto"</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -2192,13 +2202,856 @@ pre.rouge {
 <div class="sect1">
 <h2 id="_пример_описания_веб_сервисов">Пример описания веб-сервисов</h2>
 <div class="sectionbody">
-
+<div class="sect2">
+<h3 id="_ресурс_project_get_apiv1projectall">Ресурс (project) GET "/api/v1/project/all/"</h3>
+<div class="sect3">
+<h4 id="_общие_сведения_4">Общие сведения</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selectAllProject</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Выборка всех проектов.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Сервис</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Task Manager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HTTP-метод</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HTTP-адрес</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/v1/project/all/</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_параметров">Описание параметров</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Вид</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Обязательный</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="7"><p class="tableblock">Отсутствует</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_запроса">Описание запроса</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Медиа тип</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип данных</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Обязательный</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="5"><p class="tableblock">Отсутствует</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_ответов">Описание ответов</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 11.1111%;">
+<col style="width: 14.8148%;">
+<col style="width: 37.037%;">
+<col style="width: 22.2222%;">
+<col style="width: 14.8149%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>HTTP-код</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Медиа тип</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип данных</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"application/json"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Успешный ответ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="#ProjectDto">ProjectDto</a>[]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"application/xml"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Успешный ответ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="#ProjectDto">ProjectDto</a>[]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">02.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">default</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"application/json"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Неизветсная ошибока</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="#ErrorDto">ErrorDto</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ресурс_project_get_apiv1projectoneprojectid">Ресурс (project) GET "/api/v1/project/one/{projectId}/"</h3>
+<div class="sect3">
+<h4 id="_общие_сведения_5">Общие сведения</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selectOneProject</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Выборка проекта.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Сервис</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Task Manager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HTTP-метод</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HTTP-адрес</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/v1/project/one/{projectId}/</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_параметров_2">Описание параметров</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Вид</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Обязательный</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">projectId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Код проекта</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">uuid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">path</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_запроса_2">Описание запроса</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Медиа тип</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип данных</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Обязательный</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="5"><p class="tableblock">Отсутствует</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_ответов_2">Описание ответов</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 11.1111%;">
+<col style="width: 14.8148%;">
+<col style="width: 37.037%;">
+<col style="width: 22.2222%;">
+<col style="width: 14.8149%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>HTTP-код</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Медиа тип</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип данных</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"application/json"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Успешный ответ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="#ProjectDto">ProjectDto</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"application/xml"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Успешный ответ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="#ProjectDto">ProjectDto</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">02.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">default</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"application/json"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Неизветсная ошибока</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="#ErrorDto">ErrorDto</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ресурс_task_get_apiv1taskall">Ресурс (task) GET "/api/v1/task/all/"</h3>
+<div class="sect3">
+<h4 id="_общие_сведения_6">Общие сведения</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selectAllTask</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Выборка всех задач.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Сервис</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Task Manager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HTTP-метод</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HTTP-адрес</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/v1/task/all/</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_параметров_3">Описание параметров</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Вид</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Обязательный</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="7"><p class="tableblock">Отсутствует</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_запроса_3">Описание запроса</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Медиа тип</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип данных</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Обязательный</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="5"><p class="tableblock">Отсутствует</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_ответов_3">Описание ответов</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 11.1111%;">
+<col style="width: 14.8148%;">
+<col style="width: 37.037%;">
+<col style="width: 22.2222%;">
+<col style="width: 14.8149%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>HTTP-код</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Медиа тип</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип данных</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"application/json"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Успешный ответ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="#TaskDto">TaskDto</a>[]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"application/xml"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Успешный ответ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="#TaskDto">TaskDto</a>[]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">02.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">default</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"application/json"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Неизветсная ошибока</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="#ErrorDto">ErrorDto</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ресурс_task_get_apiv1taskonetaskid">Ресурс (task) GET "/api/v1/task/one/{taskId}/"</h3>
+<div class="sect3">
+<h4 id="_общие_сведения_7">Общие сведения</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selectOneTask</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Выборка задачи.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Сервис</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Task Manager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HTTP-метод</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HTTP-адрес</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/v1/task/one/{taskId}/</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_параметров_4">Описание параметров</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Вид</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Обязательный</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">taskId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Код задачи</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">uuid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">path</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_запроса_4">Описание запроса</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Медиа тип</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип данных</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Обязательный</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="5"><p class="tableblock">Отсутствует</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_ответов_4">Описание ответов</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 11.1111%;">
+<col style="width: 14.8148%;">
+<col style="width: 37.037%;">
+<col style="width: 22.2222%;">
+<col style="width: 14.8149%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>HTTP-код</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Медиа тип</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип данных</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"application/json"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Успешный ответ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="#TaskDto">TaskDto</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"application/xml"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Успешный ответ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="#TaskDto">TaskDto</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">02.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">default</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"application/json"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Неизветсная ошибока</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="#ErrorDto">ErrorDto</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ErrorDto">Модель данных "ErrorDto"</h3>
+<div class="sect3">
+<h4 id="_общие_сведения_8">Общие сведения</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ErrorDto</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ошибка</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Тип данных</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Сервис</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Task Manager</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_полей_3">Описание полей</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип данных</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Обязательный</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Результат выполнения</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Результат выполнения</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">02.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Сообщение об ошибке</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Сообщение об ошибке</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">03.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Код ошибки</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Код ошибки</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ProjectDto">Модель данных "ProjectDto"</h3>
+<div class="sect3">
+<h4 id="_общие_сведения_9">Общие сведения</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ProjectDto</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Проект</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Тип данных</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Сервис</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Task Manager</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_полей_4">Описание полей</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип данных</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Обязательный</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Идентификатор</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Идентификатор</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">uuid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">02.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Название</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Название</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">03.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Описание</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Описание</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">04.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">statusType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Статус</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Статус</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">05.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Дата создания</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Дата создания</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">iso8601</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">06.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">updated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Дата создания</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Дата создания</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">iso8601</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="TaskDto">Модель данных "TaskDto"</h3>
+<div class="sect3">
+<h4 id="_общие_сведения_10">Общие сведения</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TaskDto</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Задача</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Тип данных</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Сервис</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Task Manager</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_полей_5">Описание полей</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Тип данных</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Формат</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Обязательный</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Идентификатор</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Идентификатор</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">uuid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">02.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Название</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Название</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">03.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Описание</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Описание</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">04.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">statusType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Статус</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Статус</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">05.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Дата создания</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Дата создания</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">iso8601</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">06.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">updated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Дата создания</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Дата создания</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">iso8601</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-18 19:46:18 +0400
+Last updated 2025-10-18 20:15:05 +0400
 </div>
 </div>
 </body>

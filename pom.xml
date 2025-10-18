@@ -27,6 +27,35 @@
         <plugins>
             <plugin>
                 <groupId>ru.volnenko.maven.plugin</groupId>
+                <artifactId>openapi-asciidoc-maven-plugin</artifactId>
+                <version>1.0.3</version>
+                <configuration>
+                    <serviceName>Task Manager</serviceName>
+                    <headerFirstEnabled>false</headerFirstEnabled>
+                    <headerSecondEnabled>false</headerSecondEnabled>
+                    <tableOfContentsEnabled>true</tableOfContentsEnabled>
+                    <outputPath>${project.basedir}/src/main/asciidoc</outputPath>
+                    <outputFile>page-openapi.adoc</outputFile>
+                    <outputJsonFile>openapi.json</outputJsonFile>
+                    <outputJsonFileEnabled>true</outputJsonFileEnabled>
+                    <outputYamlFile>openapi.yaml</outputYamlFile>
+                    <outputYamlFileEnabled>true</outputYamlFileEnabled>
+                    <outputJavaScriptFile>openapi.js</outputJavaScriptFile>
+                    <outputJavaScriptFileEnabled>true</outputJavaScriptFileEnabled>
+                    <files>
+                        <file>${project.basedir}/src/main/resources/openapi/OpenAPI.yaml</file>
+                        <file>${project.basedir}/src/main/resources/openapi/model/ErrorDto.yaml</file>
+                        <file>${project.basedir}/src/main/resources/openapi/model/ProjectDto.yaml</file>
+                        <file>${project.basedir}/src/main/resources/openapi/model/TaskDto.yaml</file>
+                        <file>${project.basedir}/src/main/resources/openapi/path/ProjectSelectAll.yaml</file>
+                        <file>${project.basedir}/src/main/resources/openapi/path/ProjectSelectOne.yaml</file>
+                        <file>${project.basedir}/src/main/resources/openapi/path/TaskSelectAll.yaml</file>
+                        <file>${project.basedir}/src/main/resources/openapi/path/TaskSelectOne.yaml</file>
+                    </files>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>ru.volnenko.maven.plugin</groupId>
                 <artifactId>liquilbase-asciidoc-maven-plugin</artifactId>
                 <version>1.0.0</version>
                 <configuration>

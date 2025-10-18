@@ -1,0 +1,28 @@
+paths:
+  /api/v1/task/all/:
+    get:
+      tags:
+        - task
+      summary: Выборка всех задач.
+      description: Выборка всех задач.
+      operationId: selectAllTask
+      responses:
+        '200':
+          description: Успешный ответ
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskDto'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskDto'
+        default:
+          description: Неизветсная ошибока
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorDto"

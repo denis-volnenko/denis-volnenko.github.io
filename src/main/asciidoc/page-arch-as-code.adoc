@@ -892,3 +892,5 @@ components:
 include::page-database.adoc[]
 
 == Пример описания веб-сервисов
+
+include::page-openapi.adoc[]
