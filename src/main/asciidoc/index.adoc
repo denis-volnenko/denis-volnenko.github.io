@@ -1,5 +1,11 @@
 # DENIS VOLNENKO
 
-## АРХИТЕКТУРНАЯ ДОКУМЕНТАЦИЯ
+## 1. OPENSOURCE
 
-xref:page-arch-as-code.adoc[Архитектура как код]
+### 1.1. LIQUIBASE MAVEN PLUGIN
+
+### 1.2. OPENAPI MAVEN PLUGIN
+
+## 2. СТАТЬИ
+
+xref:page-arch-as-code.adoc[2.1. АРХИТЕКТУРА КАК КОД]
