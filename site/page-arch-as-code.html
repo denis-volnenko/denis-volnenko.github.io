@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<title>АРХИТЕКТУРА КАК КОД</title>
+<title>ДОКУМЕНТАЦИЯ КАК КОД</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -650,7 +650,7 @@ pre.rouge {
 </head>
 <body class="article">
 <div id="header">
-<h1>АРХИТЕКТУРА КАК КОД</h1>
+<h1>ДОКУМЕНТАЦИЯ КАК КОД</h1>
 <div id="toc" class="toc">
 <div id="toctitle">Содержание</div>
 <ul class="sectlevel1">
@@ -758,6 +758,10 @@ pre.rouge {
 <p>Отсутствует возможность экспортировать и
 импортировать документацию между проектами и окружениями.</p>
 </li>
+<li>
+<p>Большое количество рутинной работы при описании
+сложных технических решений.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -844,6 +848,9 @@ pre.rouge {
 <ul>
 <li>
 <p><strong>Plantuml</strong></p>
+</li>
+<li>
+<p>Structurizr</p>
 </li>
 <li>
 <p>GraphViz</p>
@@ -958,13 +965,23 @@ pre.rouge {
 </div>
 <div class="sect3">
 <h4 id="_3_2_4_преимущества_code_first">3.2.4. Преимущества Code First</h4>
+<div class="listingblock">
+<div class="content">
+<pre>"Рабочий софт важнее исчерпывающей документации"
+
+Один из ключевых принципов Agile, означающий,
+что главная цель — предоставить работающий
+продукт заказчику как можно скорее, а не тратить
+время на составление подробных документов до начала работы.</pre>
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Для разработки документации практически ничего не нужно делать.</p>
+<p>Самый распространенный подход к ведению документации на рынке.</p>
 </li>
 <li>
-<p>Самый распространенный подход к ведению документации на рынке.</p>
+<p>Для разработки документации практически ничего не нужно делать.</p>
 </li>
 <li>
 <p>Самая актуальная документация - это программный код приложения.</p>
@@ -978,6 +995,9 @@ pre.rouge {
 <ul>
 <li>
 <p>Отсутствует возможность что-то изменить, так как ресурсы на реализацию уже потрачены.</p>
+</li>
+<li>
+<p>Архитектурная документация всегда пытается догнать техническое решение.</p>
 </li>
 <li>
 <p>Отсутствует возможность изменить бинарные файлы со схемами.</p>
@@ -1022,6 +1042,9 @@ pre.rouge {
 <p>Ниже стоимость исправления ошибки на этапе проектирования.</p>
 </li>
 <li>
+<p>Архитектурная документация всегда находится в актуальном состоянии.</p>
+</li>
+<li>
 <p>Отсутствует потребность в консультациях со стороны разработчика приложения.</p>
 </li>
 <li>
@@ -1044,6 +1067,59 @@ pre.rouge {
 <p>Встречаются баги и ограничения в инструментах.</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_3_3_контрактная_разработка_по_мета_модели">3.3.3. Контрактная разработка по мета-модели</h4>
+<div class="paragraph">
+<p><strong>Список мета-моделей</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Название</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ФОРМАТ</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>СТАТУС</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Liquibase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Мета-модель для описания БД</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YAML, JSON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ГОТОВО</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">02.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenAPI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Мета-модель для описания Rest API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YAML, JSON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ГОТОВО</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">03.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AsyncAPI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Мета-модель для описания очередей</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YAML, JSON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">В РАЗРАБОТКЕ</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_3_3_4_описание_процесса_проектирования_на_мета_модели">3.3.4. Описание процесса проектирования на мета-модели</h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/process-meta-model.svg" alt="process meta model">
+</div>
 </div>
 </div>
 </div>
@@ -1872,7 +1948,7 @@ pre.rouge {
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-18 14:53:31 +0400
+Last updated 2025-10-18 15:38:05 +0400
 </div>
 </div>
 </body>
