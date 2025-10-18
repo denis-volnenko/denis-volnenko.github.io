@@ -994,7 +994,7 @@ pre.rouge {
 <h3 id="_4_2_code_first">4.2. Code First</h3>
 <div class="listingblock">
 <div class="content">
-<pre>Сначала разработать программное обеспечение, а после документацию.
+<pre>Сначала разрабатывается программное обеспечение, а после документация.
 
 * Готовый софт частично сам себя опишет.</pre>
 </div>
@@ -1029,6 +1029,57 @@ pre.rouge {
 </div>
 <div class="paragraph">
 <p><a href="https://example.com/v3/api-docs/swagger-ui.html" class="bare">https://example.com/v3/api-docs/swagger-ui.html</a></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">curl http://localhost:8080/v3/api-docs/openapi.json</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">curl http://example.com/v3/api-docs/openapi.json</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_2_4_преимущества_code_first">4.2.4. Преимущества Code First</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Для разработки документации практически ничего не нужно делать.</p>
+</li>
+<li>
+<p>Самая актуальная документация - это программный код приложения.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_2_5_недостатки_code_first">4.2.5. Недостатки Code First</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Отсутствует возможность что-то изменить, так как ресурсы на реализацию уже потрачены.</p>
+</li>
+<li>
+<p>Отсутствует возможность изменить бинарные файлы со схемами.</p>
+</li>
+<li>
+<p>Отсутствует возможность доработки и интеграции без реверсивного инжиниринга.</p>
+</li>
+<li>
+<p>При возникновении инцидентов невозможно понять что произошло.</p>
+</li>
+<li>
+<p>При уходе технических специалистов из команды знания о продукты будут утеряны.</p>
+</li>
+<li>
+<p>Накапливается технический долг, что приводит к неоправданной сложности технического решения.</p>
+</li>
+<li>
+<p>Через некоторое время для продолжения разработки сервиса нужен будет рестарт проекта.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1776,7 +1827,7 @@ pre.rouge {
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-18 14:12:33 +0400
+Last updated 2025-10-18 14:29:46 +0400
 </div>
 </div>
 </body>
