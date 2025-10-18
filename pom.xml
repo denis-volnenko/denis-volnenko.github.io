@@ -51,7 +51,7 @@
                 <artifactId>asciidoctor-maven-plugin</artifactId>
                 <version>2.2.6</version>
                 <configuration>
-                    <outputDirectory>${project.basedir}</outputDirectory>
+                    <outputDirectory>${project.basedir}/site</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>
