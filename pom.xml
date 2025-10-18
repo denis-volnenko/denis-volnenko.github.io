@@ -32,7 +32,7 @@
                 <configuration>
                     <serviceName>Task Manager</serviceName>
                     <dataBaseInfo>Postgres 15</dataBaseInfo>
-                    <headerFirstEnabled>true</headerFirstEnabled>
+                    <headerFirstEnabled>false</headerFirstEnabled>
                     <headerSecondEnabled>true</headerSecondEnabled>
                     <tableOfContentsEnabled>true</tableOfContentsEnabled>
                     <outputPath>${project.basedir}/src/main/asciidoc</outputPath>
