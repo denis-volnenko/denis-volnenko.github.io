@@ -15,3 +15,9 @@ https://github.com/denis-volnenko/openapi-asciidoc-maven-plugin
 ### xref:page-arch-as-code.adoc[2.1. АРХИТЕКТУРА КАК КОД]
 
 #### xref:page-database.adoc[2.1.2. ПРИМЕР ОПИСАНИЯ БАЗЫ ДАННЫХ]
+
+## 3. ВЕБ-САЙТЫ
+
+### 3.1. https://www.volnenko.ru/[www.volnenko.ru]
+
+### 3.2. https://cv.volnenko.ru/[cv.volnenko.ru]
