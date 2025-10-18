@@ -266,6 +266,10 @@ curl http://example.com/v3/api-docs/openapi.json
 
 image::images/process-meta-model.svg[]
 
+#### 3.3.5. Целевая схема разделения труда между аналитиками и архитекторами
+
+image::images/process-archdoc-disign.svg[]
+
 ## 4. Используемый стек технологий
 
 [cols="0,100"]
