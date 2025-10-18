@@ -51,6 +51,9 @@
                 <artifactId>asciidoctor-maven-plugin</artifactId>
                 <version>2.2.6</version>
                 <configuration>
+                    <attributes>
+                        <source-highlighter>rouge</source-highlighter>
+                    </attributes>
                     <outputDirectory>${project.basedir}/site</outputDirectory>
                 </configuration>
                 <executions>

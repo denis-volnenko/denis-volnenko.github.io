@@ -432,6 +432,221 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
 </head>
 <body class="article">
 <div id="header">
@@ -740,38 +955,38 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+<pre class="rouge highlight"><code data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+         <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
 
-    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
 
-    &lt;groupId&gt;ru.volnenko.doc&lt;/groupId&gt;
-    &lt;artifactId&gt;my-project&lt;/artifactId&gt;
-    &lt;version&gt;1.0.0&lt;/version&gt;
-    &lt;packaging&gt;pom&lt;/packaging&gt;
+    <span class="nt">&lt;groupId&gt;</span>ru.volnenko.doc<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>my-project<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;packaging&gt;</span>pom<span class="nt">&lt;/packaging&gt;</span>
 
-    &lt;build&gt;
-        &lt;plugins&gt;
-            &lt;plugin&gt;
-                &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
-                &lt;artifactId&gt;asciidoctor-maven-plugin&lt;/artifactId&gt;
-                &lt;version&gt;2.2.6&lt;/version&gt;
-                &lt;executions&gt;
-                    &lt;execution&gt;
-                        &lt;id&gt;convert-to-html&lt;/id&gt;
-                        &lt;phase&gt;generate-resources&lt;/phase&gt;
-                        &lt;goals&gt;
-                            &lt;goal&gt;process-asciidoc&lt;/goal&gt;
-                        &lt;/goals&gt;
-                    &lt;/execution&gt;
-                &lt;/executions&gt;
-            &lt;/plugin&gt;
-        &lt;/plugins&gt;
-    &lt;/build&gt;
+    <span class="nt">&lt;build&gt;</span>
+        <span class="nt">&lt;plugins&gt;</span>
+            <span class="nt">&lt;plugin&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>org.asciidoctor<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>asciidoctor-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>2.2.6<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;executions&gt;</span>
+                    <span class="nt">&lt;execution&gt;</span>
+                        <span class="nt">&lt;id&gt;</span>convert-to-html<span class="nt">&lt;/id&gt;</span>
+                        <span class="nt">&lt;phase&gt;</span>generate-resources<span class="nt">&lt;/phase&gt;</span>
+                        <span class="nt">&lt;goals&gt;</span>
+                            <span class="nt">&lt;goal&gt;</span>process-asciidoc<span class="nt">&lt;/goal&gt;</span>
+                        <span class="nt">&lt;/goals&gt;</span>
+                    <span class="nt">&lt;/execution&gt;</span>
+                <span class="nt">&lt;/executions&gt;</span>
+            <span class="nt">&lt;/plugin&gt;</span>
+        <span class="nt">&lt;/plugins&gt;</span>
+    <span class="nt">&lt;/build&gt;</span>
 
-&lt;/project&gt;</code></pre>
+<span class="nt">&lt;/project&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -781,7 +996,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-asciidoc" data-lang="asciidoc"># Hello World!</code></pre>
+<pre class="rouge highlight"><code data-lang="asciidoc"># Hello World!</code></pre>
 </div>
 </div>
 </div>
@@ -804,38 +1019,38 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+<pre class="rouge highlight"><code data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+         <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
 
-    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
 
-    &lt;groupId&gt;ru.volnenko.doc&lt;/groupId&gt;
-    &lt;artifactId&gt;my-project&lt;/artifactId&gt;
-    &lt;version&gt;1.0.0&lt;/version&gt;
-    &lt;packaging&gt;pom&lt;/packaging&gt;
+    <span class="nt">&lt;groupId&gt;</span>ru.volnenko.doc<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>my-project<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;packaging&gt;</span>pom<span class="nt">&lt;/packaging&gt;</span>
 
-    &lt;build&gt;
-        &lt;plugins&gt;
-            &lt;plugin&gt;
-                &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
-                &lt;artifactId&gt;asciidoctor-maven-plugin&lt;/artifactId&gt;
-                &lt;version&gt;2.2.6&lt;/version&gt;
-                &lt;executions&gt;
-                    &lt;execution&gt;
-                        &lt;id&gt;convert-to-html&lt;/id&gt;
-                        &lt;phase&gt;generate-resources&lt;/phase&gt;
-                        &lt;goals&gt;
-                            &lt;goal&gt;process-asciidoc&lt;/goal&gt;
-                        &lt;/goals&gt;
-                    &lt;/execution&gt;
-                &lt;/executions&gt;
-            &lt;/plugin&gt;
-        &lt;/plugins&gt;
-    &lt;/build&gt;
+    <span class="nt">&lt;build&gt;</span>
+        <span class="nt">&lt;plugins&gt;</span>
+            <span class="nt">&lt;plugin&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>org.asciidoctor<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>asciidoctor-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>2.2.6<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;executions&gt;</span>
+                    <span class="nt">&lt;execution&gt;</span>
+                        <span class="nt">&lt;id&gt;</span>convert-to-html<span class="nt">&lt;/id&gt;</span>
+                        <span class="nt">&lt;phase&gt;</span>generate-resources<span class="nt">&lt;/phase&gt;</span>
+                        <span class="nt">&lt;goals&gt;</span>
+                            <span class="nt">&lt;goal&gt;</span>process-asciidoc<span class="nt">&lt;/goal&gt;</span>
+                        <span class="nt">&lt;/goals&gt;</span>
+                    <span class="nt">&lt;/execution&gt;</span>
+                <span class="nt">&lt;/executions&gt;</span>
+            <span class="nt">&lt;/plugin&gt;</span>
+        <span class="nt">&lt;/plugins&gt;</span>
+    <span class="nt">&lt;/build&gt;</span>
 
-&lt;/project&gt;</code></pre>
+<span class="nt">&lt;/project&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -845,19 +1060,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;settings</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/SETTINGS/1.0.0"</span>
+          <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+          <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd"</span><span class="nt">&gt;</span>
 
-    &lt;servers&gt;
-        &lt;server&gt;
-            &lt;id&gt;confluence&lt;/id&gt;
-            &lt;username&gt;test&lt;/username&gt;
-            &lt;password&gt;1234&lt;/password&gt;
-        &lt;/server&gt;
-    &lt;/servers&gt;
+    <span class="nt">&lt;servers&gt;</span>
+        <span class="nt">&lt;server&gt;</span>
+            <span class="nt">&lt;id&gt;</span>confluence<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;username&gt;</span>test<span class="nt">&lt;/username&gt;</span>
+            <span class="nt">&lt;password&gt;</span>1234<span class="nt">&lt;/password&gt;</span>
+        <span class="nt">&lt;/server&gt;</span>
+    <span class="nt">&lt;/servers&gt;</span>
 
-&lt;/settings&gt;</code></pre>
+<span class="nt">&lt;/settings&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -889,59 +1104,59 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">---
-databaseChangeLog:
-  - changeSet:
-      id: project
-      author: denis.volnenko
-      changes:
-        - createTable:
-            schemaName: public
-            catalogName: tm
-            tableName: app_project
-            remarks: Проект
-            columns:
-              - column:
-                  name: id
-                  type: uuid
-                  autoIncrement: true
-                  remarks: Уникальный код
-                  constraints:
-                    primaryKey: true
-                    nullable: false
-              - column:
-                  name: name
-                  type: text
-                  remarks: Название
-                  defaultValue: ""
-                  constraints:
-                    nullable: false
-              - column:
-                  name: description
-                  type: text
-                  remarks: Описание
-                  defaultValue: ""
-                  constraints:
-                    nullable: false
-              - column:
-                  name: status_type
-                  type: text
-                  remarks: Статус
-                  defaultValue: "NOT_STARTED"
-                  constraints:
-                    nullable: false
-              - column:
-                  name: created
-                  type: timestampz
-                  remarks: Дата создания
-                  constraints:
-                    nullable: false
-              - column:
-                  name: updated
-                  type: timestampz
-                  remarks: Дата обновления
-                  constraints:
-                    nullable: false</code></pre>
+<pre class="rouge highlight"><code data-lang="yaml"><span class="nn">---</span>
+<span class="na">databaseChangeLog</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">changeSet</span><span class="pi">:</span>
+      <span class="na">id</span><span class="pi">:</span> <span class="s">project</span>
+      <span class="na">author</span><span class="pi">:</span> <span class="s">denis.volnenko</span>
+      <span class="na">changes</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">createTable</span><span class="pi">:</span>
+            <span class="na">schemaName</span><span class="pi">:</span> <span class="s">public</span>
+            <span class="na">catalogName</span><span class="pi">:</span> <span class="s">tm</span>
+            <span class="na">tableName</span><span class="pi">:</span> <span class="s">app_project</span>
+            <span class="na">remarks</span><span class="pi">:</span> <span class="s">Проект</span>
+            <span class="na">columns</span><span class="pi">:</span>
+              <span class="pi">-</span> <span class="na">column</span><span class="pi">:</span>
+                  <span class="na">name</span><span class="pi">:</span> <span class="s">id</span>
+                  <span class="na">type</span><span class="pi">:</span> <span class="s">uuid</span>
+                  <span class="na">autoIncrement</span><span class="pi">:</span> <span class="no">true</span>
+                  <span class="na">remarks</span><span class="pi">:</span> <span class="s">Уникальный код</span>
+                  <span class="na">constraints</span><span class="pi">:</span>
+                    <span class="na">primaryKey</span><span class="pi">:</span> <span class="no">true</span>
+                    <span class="na">nullable</span><span class="pi">:</span> <span class="no">false</span>
+              <span class="pi">-</span> <span class="na">column</span><span class="pi">:</span>
+                  <span class="na">name</span><span class="pi">:</span> <span class="s">name</span>
+                  <span class="na">type</span><span class="pi">:</span> <span class="s">text</span>
+                  <span class="na">remarks</span><span class="pi">:</span> <span class="s">Название</span>
+                  <span class="na">defaultValue</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+                  <span class="na">constraints</span><span class="pi">:</span>
+                    <span class="na">nullable</span><span class="pi">:</span> <span class="no">false</span>
+              <span class="pi">-</span> <span class="na">column</span><span class="pi">:</span>
+                  <span class="na">name</span><span class="pi">:</span> <span class="s">description</span>
+                  <span class="na">type</span><span class="pi">:</span> <span class="s">text</span>
+                  <span class="na">remarks</span><span class="pi">:</span> <span class="s">Описание</span>
+                  <span class="na">defaultValue</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+                  <span class="na">constraints</span><span class="pi">:</span>
+                    <span class="na">nullable</span><span class="pi">:</span> <span class="no">false</span>
+              <span class="pi">-</span> <span class="na">column</span><span class="pi">:</span>
+                  <span class="na">name</span><span class="pi">:</span> <span class="s">status_type</span>
+                  <span class="na">type</span><span class="pi">:</span> <span class="s">text</span>
+                  <span class="na">remarks</span><span class="pi">:</span> <span class="s">Статус</span>
+                  <span class="na">defaultValue</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NOT_STARTED"</span>
+                  <span class="na">constraints</span><span class="pi">:</span>
+                    <span class="na">nullable</span><span class="pi">:</span> <span class="no">false</span>
+              <span class="pi">-</span> <span class="na">column</span><span class="pi">:</span>
+                  <span class="na">name</span><span class="pi">:</span> <span class="s">created</span>
+                  <span class="na">type</span><span class="pi">:</span> <span class="s">timestampz</span>
+                  <span class="na">remarks</span><span class="pi">:</span> <span class="s">Дата создания</span>
+                  <span class="na">constraints</span><span class="pi">:</span>
+                    <span class="na">nullable</span><span class="pi">:</span> <span class="no">false</span>
+              <span class="pi">-</span> <span class="na">column</span><span class="pi">:</span>
+                  <span class="na">name</span><span class="pi">:</span> <span class="s">updated</span>
+                  <span class="na">type</span><span class="pi">:</span> <span class="s">timestampz</span>
+                  <span class="na">remarks</span><span class="pi">:</span> <span class="s">Дата обновления</span>
+                  <span class="na">constraints</span><span class="pi">:</span>
+                    <span class="na">nullable</span><span class="pi">:</span> <span class="no">false</span></code></pre>
 </div>
 </div>
 </div>
@@ -951,68 +1166,68 @@ databaseChangeLog:
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">---
-databaseChangeLog:
-- changeSet:
-    id: task
-    author: denis.volnenko
-    changes:
-      - createTable:
-          schemaName: public
-          catalogName: tm
-          tableName: app_task
-          remarks: Задачи
-          columns:
-            - column:
-                name: id
-                type: uuid
-                remarks: Уникальный код
-                autoIncrement: true
-                constraints:
-                  primaryKey: true
-                  nullable: false
-            - column:
-                name: name
-                type: text
-                remarks: Название
-                defaultValue: ""
-                constraints:
-                  nullable: false
-            - column:
-                name: description
-                type: text
-                remarks: Описание
-                defaultValue: ""
-                constraints:
-                  nullable: false
-            - column:
-                name: status_type
-                type: text
-                remarks: Статус
-                defaultValue: "NOT_STARTED"
-                constraints:
-                  nullable: false
-            - column:
-                name: project_id
-                type: uuid
-                remarks: Код проекта
-                constraints:
-                  foreignKey:
-                    referencedColumnNames: id
-                    referencedTableName: app_project
-                  nullable: false
-            - column:
-                name: created
-                type: timestampz
-                remarks: Дата создания
-                constraints:
-                  nullable: false
-            - column:
-                name: updated
-                type: timestampz
-                remarks: Дата обновления
-                constraints:
-                  nullable: false</code></pre>
+<pre class="rouge highlight"><code data-lang="yaml"><span class="nn">---</span>
+<span class="na">databaseChangeLog</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">changeSet</span><span class="pi">:</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s">task</span>
+    <span class="na">author</span><span class="pi">:</span> <span class="s">denis.volnenko</span>
+    <span class="na">changes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">createTable</span><span class="pi">:</span>
+          <span class="na">schemaName</span><span class="pi">:</span> <span class="s">public</span>
+          <span class="na">catalogName</span><span class="pi">:</span> <span class="s">tm</span>
+          <span class="na">tableName</span><span class="pi">:</span> <span class="s">app_task</span>
+          <span class="na">remarks</span><span class="pi">:</span> <span class="s">Задачи</span>
+          <span class="na">columns</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">column</span><span class="pi">:</span>
+                <span class="na">name</span><span class="pi">:</span> <span class="s">id</span>
+                <span class="na">type</span><span class="pi">:</span> <span class="s">uuid</span>
+                <span class="na">remarks</span><span class="pi">:</span> <span class="s">Уникальный код</span>
+                <span class="na">autoIncrement</span><span class="pi">:</span> <span class="no">true</span>
+                <span class="na">constraints</span><span class="pi">:</span>
+                  <span class="na">primaryKey</span><span class="pi">:</span> <span class="no">true</span>
+                  <span class="na">nullable</span><span class="pi">:</span> <span class="no">false</span>
+            <span class="pi">-</span> <span class="na">column</span><span class="pi">:</span>
+                <span class="na">name</span><span class="pi">:</span> <span class="s">name</span>
+                <span class="na">type</span><span class="pi">:</span> <span class="s">text</span>
+                <span class="na">remarks</span><span class="pi">:</span> <span class="s">Название</span>
+                <span class="na">defaultValue</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+                <span class="na">constraints</span><span class="pi">:</span>
+                  <span class="na">nullable</span><span class="pi">:</span> <span class="no">false</span>
+            <span class="pi">-</span> <span class="na">column</span><span class="pi">:</span>
+                <span class="na">name</span><span class="pi">:</span> <span class="s">description</span>
+                <span class="na">type</span><span class="pi">:</span> <span class="s">text</span>
+                <span class="na">remarks</span><span class="pi">:</span> <span class="s">Описание</span>
+                <span class="na">defaultValue</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+                <span class="na">constraints</span><span class="pi">:</span>
+                  <span class="na">nullable</span><span class="pi">:</span> <span class="no">false</span>
+            <span class="pi">-</span> <span class="na">column</span><span class="pi">:</span>
+                <span class="na">name</span><span class="pi">:</span> <span class="s">status_type</span>
+                <span class="na">type</span><span class="pi">:</span> <span class="s">text</span>
+                <span class="na">remarks</span><span class="pi">:</span> <span class="s">Статус</span>
+                <span class="na">defaultValue</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NOT_STARTED"</span>
+                <span class="na">constraints</span><span class="pi">:</span>
+                  <span class="na">nullable</span><span class="pi">:</span> <span class="no">false</span>
+            <span class="pi">-</span> <span class="na">column</span><span class="pi">:</span>
+                <span class="na">name</span><span class="pi">:</span> <span class="s">project_id</span>
+                <span class="na">type</span><span class="pi">:</span> <span class="s">uuid</span>
+                <span class="na">remarks</span><span class="pi">:</span> <span class="s">Код проекта</span>
+                <span class="na">constraints</span><span class="pi">:</span>
+                  <span class="na">foreignKey</span><span class="pi">:</span>
+                    <span class="na">referencedColumnNames</span><span class="pi">:</span> <span class="s">id</span>
+                    <span class="na">referencedTableName</span><span class="pi">:</span> <span class="s">app_project</span>
+                  <span class="na">nullable</span><span class="pi">:</span> <span class="no">false</span>
+            <span class="pi">-</span> <span class="na">column</span><span class="pi">:</span>
+                <span class="na">name</span><span class="pi">:</span> <span class="s">created</span>
+                <span class="na">type</span><span class="pi">:</span> <span class="s">timestampz</span>
+                <span class="na">remarks</span><span class="pi">:</span> <span class="s">Дата создания</span>
+                <span class="na">constraints</span><span class="pi">:</span>
+                  <span class="na">nullable</span><span class="pi">:</span> <span class="no">false</span>
+            <span class="pi">-</span> <span class="na">column</span><span class="pi">:</span>
+                <span class="na">name</span><span class="pi">:</span> <span class="s">updated</span>
+                <span class="na">type</span><span class="pi">:</span> <span class="s">timestampz</span>
+                <span class="na">remarks</span><span class="pi">:</span> <span class="s">Дата обновления</span>
+                <span class="na">constraints</span><span class="pi">:</span>
+                  <span class="na">nullable</span><span class="pi">:</span> <span class="no">false</span></code></pre>
 </div>
 </div>
 </div>
@@ -1022,27 +1237,27 @@ databaseChangeLog:
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">---
-databaseChangeLog:
-- changeSet:
-    id: status_type
-    author: denis.volnenko
-    changes:
-      - createType:
-          schemaName: public
-          catalogName: tm
-          typeName: status_type
-          remarks: Статус
-          values:
-            - value:
-                name: NOT_STARTED
-                remarks: Не начато
-            - value:
-                name: IN_PROGRESS
-                remarks: В процессе
-            - value:
-                name: COMPLETE
-                remarks: Завершено</code></pre>
+<pre class="rouge highlight"><code data-lang="yaml"><span class="nn">---</span>
+<span class="na">databaseChangeLog</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">changeSet</span><span class="pi">:</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s">status_type</span>
+    <span class="na">author</span><span class="pi">:</span> <span class="s">denis.volnenko</span>
+    <span class="na">changes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">createType</span><span class="pi">:</span>
+          <span class="na">schemaName</span><span class="pi">:</span> <span class="s">public</span>
+          <span class="na">catalogName</span><span class="pi">:</span> <span class="s">tm</span>
+          <span class="na">typeName</span><span class="pi">:</span> <span class="s">status_type</span>
+          <span class="na">remarks</span><span class="pi">:</span> <span class="s">Статус</span>
+          <span class="na">values</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">value</span><span class="pi">:</span>
+                <span class="na">name</span><span class="pi">:</span> <span class="s">NOT_STARTED</span>
+                <span class="na">remarks</span><span class="pi">:</span> <span class="s">Не начато</span>
+            <span class="pi">-</span> <span class="na">value</span><span class="pi">:</span>
+                <span class="na">name</span><span class="pi">:</span> <span class="s">IN_PROGRESS</span>
+                <span class="na">remarks</span><span class="pi">:</span> <span class="s">В процессе</span>
+            <span class="pi">-</span> <span class="na">value</span><span class="pi">:</span>
+                <span class="na">name</span><span class="pi">:</span> <span class="s">COMPLETE</span>
+                <span class="na">remarks</span><span class="pi">:</span> <span class="s">Завершено</span></code></pre>
 </div>
 </div>
 </div>
