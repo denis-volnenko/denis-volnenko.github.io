@@ -461,6 +461,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_4_4_настройка_генерации_документации_rest_api">4.4. Настройка генерации документации rest api</a></li>
 </ul>
 </li>
+<li><a href="#_task_manager">Task Manager</a>
+<ul class="sectlevel1">
+<li><a href="#_представление_данных">Представление данных</a>
+<ul class="sectlevel2">
+<li><a href="#_логическая_er_диаграмма_базы_данных">Логическая ER-диаграмма базы данных</a></li>
+<li><a href="#_физическая_er_диаграмма_базы_данных">Физическая ER-диаграмма базы данных</a></li>
+<li><a href="#_сущность_app_project">Сущность "app_project"</a></li>
+<li><a href="#_сущность_app_task">Сущность "app_task"</a></li>
+<li><a href="#_перечисление_status_type">Перечисление "status_type"</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -1042,10 +1055,396 @@ databaseChangeLog:
 </div>
 </div>
 </div>
+<h1 id="_task_manager" class="sect0">Task Manager</h1>
+<div class="sect1">
+<h2 id="_представление_данных">Представление данных</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_логическая_er_диаграмма_базы_данных">Логическая ER-диаграмма базы данных</h3>
+<div class="imageblock">
+<div class="content">
+<img src="erd_logic.svg" alt="erd logic">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_физическая_er_диаграмма_базы_данных">Физическая ER-диаграмма базы данных</h3>
+<div class="imageblock">
+<div class="content">
+<img src="erd_physic.svg" alt="erd physic">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_сущность_app_project">Сущность "app_project"</h3>
+<div class="sect3">
+<h4 id="_общие_сведения">Общие сведения</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">app_project</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Проект</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Сервис</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Task Manager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>База данных</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Доп. сведения</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Postgres 15</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Схема</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">public</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_полей">Описание полей</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 21.0526%;">
+<col style="width: 21.0526%;">
+<col style="width: 21.0526%;">
+<col style="width: 5.2631%;">
+<col style="width: 5.2631%;">
+<col style="width: 5.2631%;">
+<col style="width: 5.2631%;">
+<col style="width: 5.2631%;">
+<col style="width: 10.5267%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Тип</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>PK</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>UK</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>FK</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>AI</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>NN</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DEFAULT</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uuid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Уникальный код</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">02.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Название</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">03.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Описание</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">04.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Статус</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NOT_STARTED</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">05.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestampz</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Дата создания</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">06.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">updated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestampz</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Дата обновления</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_сущность_app_task">Сущность "app_task"</h3>
+<div class="sect3">
+<h4 id="_общие_сведения_2">Общие сведения</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">app_task</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Задачи</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Сервис</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Task Manager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>База данных</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Доп. сведения</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Postgres 15</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Схема</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">public</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_полей_2">Описание полей</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 21.0526%;">
+<col style="width: 21.0526%;">
+<col style="width: 21.0526%;">
+<col style="width: 5.2631%;">
+<col style="width: 5.2631%;">
+<col style="width: 5.2631%;">
+<col style="width: 5.2631%;">
+<col style="width: 5.2631%;">
+<col style="width: 10.5267%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Тип</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>PK</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>UK</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>FK</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>AI</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>NN</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DEFAULT</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uuid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Уникальный код</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">02.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Название</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">03.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Описание</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">04.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Статус</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NOT_STARTED</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">05.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">project_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uuid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Код проекта</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">06.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestampz</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Дата создания</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">07.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">updated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestampz</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Дата обновления</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_перечисление_status_type">Перечисление "status_type"</h3>
+<div class="sect3">
+<h4 id="_общие_сведения_3">Общие сведения</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status_type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Статус</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Сервис</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Task Manager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>База данных</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Доп. сведения</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Postgres 15</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Схема</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">public</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_описание_значений">Описание значений</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 0%;">
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>№</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Физ. название</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Лог. название</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">01.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NOT_STARTED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Не начато</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">02.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IN_PROGRESS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">В процессе</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">03.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">COMPLETE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Завершено</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-18 06:49:38 +0400
+Last updated 2025-10-18 06:58:44 +0400
 </div>
 </div>
 </body>

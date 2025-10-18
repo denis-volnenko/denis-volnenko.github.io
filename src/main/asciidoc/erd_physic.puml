@@ -1,0 +1,28 @@
+@startuml 
+left to right direction 
+'!pragma graphviz_dot jdot 
+!pragma layout smetana 
+entity "app_project" {
+    *"id" : "uuid"
+---
+    "name" : "text"
+    "description" : "text"
+    "status_type" : "text"
+    "created" : "timestampz"
+    "updated" : "timestampz"
+}
+
+entity "app_task" {
+    *"id" : "uuid"
+---
+    "name" : "text"
+    "description" : "text"
+    "status_type" : "text"
+    "project_id" : "uuid"
+    "created" : "timestampz"
+    "updated" : "timestampz"
+}
+
+"app_task" }--|| "app_project"
+
+@enduml

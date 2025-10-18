@@ -464,3 +464,6 @@ databaseChangeLog:
 ====
 
 ### 4.4. Настройка генерации документации rest api
+
+include::page-database.adoc[]
+
