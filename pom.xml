@@ -33,7 +33,7 @@
                     <serviceName>Task Manager</serviceName>
                     <dataBaseInfo>Postgres 15</dataBaseInfo>
                     <headerFirstEnabled>false</headerFirstEnabled>
-                    <headerSecondEnabled>true</headerSecondEnabled>
+                    <headerSecondEnabled>false</headerSecondEnabled>
                     <tableOfContentsEnabled>true</tableOfContentsEnabled>
                     <outputPath>${project.basedir}/src/main/asciidoc</outputPath>
                     <outputFile>page-database.adoc</outputFile>
