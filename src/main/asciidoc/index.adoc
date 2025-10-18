@@ -8,4 +8,4 @@
 
 ## 2. СТАТЬИ
 
-xref:page-arch-as-code.adoc[2.1. АРХИТЕКТУРА КАК КОД]
+### xref:page-arch-as-code.adoc[2.1. АРХИТЕКТУРА КАК КОД]
