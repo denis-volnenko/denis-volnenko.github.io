@@ -156,15 +156,13 @@
 
 ## 4. Проектирование enterprise-приложений
 
+image::images/hexagon.png[Контекст, 500]
+
 ### 4.1. Основные составляющие архитектуры
 
-#### 4.1.1. Модель данных
+#### 4.1.1. Презентация данных
 
-* Перечень сущностей (Entity, Models)
-
-* Атрибутивный состав (Attributes, Properties)
-
-* Открытые интерфейсы (Kafka, Rest)
+* Экранные формы (Figma)
 
 #### 4.1.2. Бизнес логика
 
@@ -174,6 +172,14 @@
 
 * Бизнес процессы (BPMN, Camunda)
 
+#### 4.1.3. Модель данных
+
+* Перечень сущностей (Entity, Models, ?)
+
+* Атрибутивный состав (Attributes, Properties, ?)
+
+* Открытые интерфейсы (Kafka, Rest, ?)
+
 ### 4.2. Code First
 
 ----
@@ -181,6 +187,30 @@
 
 * Готовый софт частично сам себя опишет.
 ----
+
+#### 4.2.1. Выгрузить DDL для описания таблиц БД
+
+[source,sql]
+----
+CREATE TABLE Employees (
+    employee_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    hire_date DATE,
+    department_id INT
+);
+----
+
+#### 4.2.2. Приложить screenshot схемы базы данных
+
+image::images/database-screenshot.png[Схема БД, 500]
+
+#### 4.2.3. Приложить ссылку на OpenAPI развернутого сервиса
+
+http://localhost:8080/v3/api-docs/swagger-ui.html
+
+https://example.com/v3/api-docs/swagger-ui.html
 
 ### 4.3. Contract First
 

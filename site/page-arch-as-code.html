@@ -661,12 +661,7 @@ pre.rouge {
 <li><a href="#_1_2_doc_as_code_документация_как_код">1.2. DOC AS CODE (документация как код)</a></li>
 </ul>
 </li>
-<li><a href="#_2_языки_разметки">2. Языки разметки</a>
-<ul class="sectlevel2">
-<li><a href="#_2_1_верстка_текста">2.1. Верстка текста</a></li>
-<li><a href="#_2_2_верстка_изображений">2.2. Верстка изображений</a></li>
-</ul>
-</li>
+<li><a href="#_2_языки_разметки">2. Языки разметки</a></li>
 <li><a href="#_3_используемый_стек_технологий">3. Используемый стек технологий</a></li>
 <li><a href="#_4_проектирование_enterprise_приложений">4. Проектирование enterprise-приложений</a>
 <ul class="sectlevel2">
@@ -820,8 +815,9 @@ pre.rouge {
 <div class="sect1">
 <h2 id="_2_языки_разметки">2. Языки разметки</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_2_1_верстка_текста">2.1. Верстка текста</h3>
+<div class="paragraph">
+<p><strong>Верстка текста</strong></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -841,9 +837,9 @@ pre.rouge {
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p><strong>Верстка изображений</strong></p>
 </div>
-<div class="sect2">
-<h3 id="_2_2_верстка_изображений">2.2. Верстка изображений</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -853,7 +849,6 @@ pre.rouge {
 <p>GraphViz</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
@@ -945,20 +940,19 @@ pre.rouge {
 <div class="sect1">
 <h2 id="_4_проектирование_enterprise_приложений">4. Проектирование enterprise-приложений</h2>
 <div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="images/hexagon.png" alt="Контекст" width="500">
+</div>
+</div>
 <div class="sect2">
 <h3 id="_4_1_основные_составляющие_архитектуры">4.1. Основные составляющие архитектуры</h3>
 <div class="sect3">
-<h4 id="_4_1_1_модель_данных">4.1.1. Модель данных</h4>
+<h4 id="_4_1_1_презентация_данных">4.1.1. Презентация данных</h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Перечень сущностей (Entity, Models)</p>
-</li>
-<li>
-<p>Атрибутивный состав (Attributes, Properties)</p>
-</li>
-<li>
-<p>Открытые интерфейсы (Kafka, Rest)</p>
+<p>Экранные формы (Figma)</p>
 </li>
 </ul>
 </div>
@@ -979,6 +973,22 @@ pre.rouge {
 </ul>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_4_1_3_модель_данных">4.1.3. Модель данных</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Перечень сущностей (Entity, Models, ?)</p>
+</li>
+<li>
+<p>Атрибутивный состав (Attributes, Properties, ?)</p>
+</li>
+<li>
+<p>Открытые интерфейсы (Kafka, Rest, ?)</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_4_2_code_first">4.2. Code First</h3>
@@ -987,6 +997,38 @@ pre.rouge {
 <pre>Сначала разработать программное обеспечение, а после документацию.
 
 * Готовый софт частично сам себя опишет.</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_2_1_выгрузить_ddl_для_описания_таблиц_бд">4.2.1. Выгрузить DDL для описания таблиц БД</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">Employees</span> <span class="p">(</span>
+    <span class="n">employee_id</span> <span class="nb">INT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+    <span class="n">first_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">last_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">email</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">UNIQUE</span><span class="p">,</span>
+    <span class="n">hire_date</span> <span class="nb">DATE</span><span class="p">,</span>
+    <span class="n">department_id</span> <span class="nb">INT</span>
+<span class="p">);</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_2_2_приложить_screenshot_схемы_базы_данных">4.2.2. Приложить screenshot схемы базы данных</h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/database-screenshot.png" alt="Схема БД" width="500">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_2_3_приложить_ссылку_на_openapi_развернутого_сервиса">4.2.3. Приложить ссылку на OpenAPI развернутого сервиса</h4>
+<div class="paragraph">
+<p><a href="http://localhost:8080/v3/api-docs/swagger-ui.html" class="bare">http://localhost:8080/v3/api-docs/swagger-ui.html</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://example.com/v3/api-docs/swagger-ui.html" class="bare">https://example.com/v3/api-docs/swagger-ui.html</a></p>
 </div>
 </div>
 </div>
@@ -1734,7 +1776,7 @@ pre.rouge {
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-18 13:38:18 +0400
+Last updated 2025-10-18 14:12:33 +0400
 </div>
 </div>
 </body>
