@@ -473,9 +473,9 @@ image::images/process-archdoc-disign.svg[]
 /data/my-project/.git # Папка git-репозитория
 /data/my-project/pom.xml # Проект Apache Maven
 /data/my-project/src/main/asciidoc/archdoc.adoc # Документ Asciidoc
-/data/my-project/src/main/resources/database/task.yaml # Описание таблицы "app_task"
-/data/my-project/src/main/resources/database/project.yaml Описание таблицы "app_project"
-/data/my-project/src/main/resources/database/status_type.yaml Описание перечисления "status_type"
+/data/my-project/src/main/resources/database/StatusType.yaml Описание перечисления "status_type"
+/data/my-project/src/main/resources/database/Project.yaml Описание таблицы "app_project"
+/data/my-project/src/main/resources/database/Task.yaml # Описание таблицы "app_task"
 
 /data/my-project/src/main/asciidoc/database.adoc # Сгенерированное описание базы данных
 /data/my-project/src/main/asciidoc/erd_logic.puml # Сгенерированная логическая схема в Plantuml
@@ -486,7 +486,7 @@ image::images/process-archdoc-disign.svg[]
 /data/my-project/src/main/asciidoc/scheme.yaml # Скомпилированная мета-модель описания БД в YAML
 ----
 
-.*project.yaml*
+.*Project.yaml*
 [%collapsible]
 ====
 [source,yaml]
@@ -494,7 +494,7 @@ image::images/process-archdoc-disign.svg[]
 ---
 databaseChangeLog:
   - changeSet:
-      id: project
+      id: Project
       author: denis.volnenko
       changes:
         - createTable:
@@ -547,7 +547,7 @@ databaseChangeLog:
 ----
 ====
 
-.*task.yaml*
+.*Task.yaml*
 [%collapsible]
 ====
 [source,yaml]
@@ -555,7 +555,7 @@ databaseChangeLog:
 ---
 databaseChangeLog:
 - changeSet:
-    id: task
+    id: Task
     author: denis.volnenko
     changes:
       - createTable:
@@ -617,7 +617,7 @@ databaseChangeLog:
 ----
 ====
 
-.*status_type.yaml*
+.*StatusType.yaml*
 [%collapsible]
 ====
 [source,yaml]
@@ -625,7 +625,7 @@ databaseChangeLog:
 ---
 databaseChangeLog:
 - changeSet:
-    id: status_type
+    id: StatusType
     author: denis.volnenko
     changes:
       - createType:
@@ -680,9 +680,9 @@ databaseChangeLog:
                     <outputJsonFileEnabled>true</outputJsonFileEnabled>
                     <outputYamlFileEnabled>true</outputYamlFileEnabled>
                     <files>
-                        <file>${project.basedir}/src/main/resources/database/status_type.yaml</file>
-                        <file>${project.basedir}/src/main/resources/database/project.yaml</file>
-                        <file>${project.basedir}/src/main/resources/database/task.yaml</file>
+                        <file>${project.basedir}/src/main/resources/database/StatusType.yaml</file>
+                        <file>${project.basedir}/src/main/resources/database/Project.yaml</file>
+                        <file>${project.basedir}/src/main/resources/database/Task.yaml</file>
                     </files>
                 </configuration>
             </plugin>
@@ -728,13 +728,142 @@ databaseChangeLog:
 /data/my-project/.git # Папка git-репозитория
 /data/my-project/pom.xml # Проект Apache Maven
 /data/my-project/src/main/asciidoc/archdoc.adoc # Документ Asciidoc
+/data/my-project/src/main/resources/openapi/OpenAPI.yaml # Контекст OpenAPI
+/data/my-project/src/main/resources/openapi/model/ErrorDto.yaml # Модель ErrorDto
+/data/my-project/src/main/resources/openapi/model/ProjectDto.yaml # Модель ProjectDto
+/data/my-project/src/main/resources/openapi/model/TaskDto.yaml # Модель TaskDto
 ----
 
-*Описание контекста*
+.*OpenAPI.yaml*
+[%collapsible]
+====
+[source,yaml]
+----
+---
+openapi: 3.0.4
+info:
+  title: Task Manager
+servers:
+  - url: https://tm.volnenko.ru/api/
+----
+====
 
-*Описание моделей*
+.*ErrorDto.dto*
+[%collapsible]
+====
+[source,yaml]
+----
+components:
+  schemas:
+    ErrorDto:
+      type: object
+      description: Ошибка
+      required:
+        - success
+      properties:
+        success:
+          type: boolean
+          description: Результат выполнения
+        message:
+          type: string
+          description: Сообщение об ошибке
+        errorCode:
+          type: string
+          description: Код ошибки
+----
+====
 
-*Описание методов*
+.*ProjectDto.yaml*
+[%collapsible]
+====
+[source,yaml]
+----
+components:
+  schemas:
+    ProjectDto:
+      type: object
+      description: Проект
+      required:
+        - id
+        - name
+        - description
+        - statusType
+        - created
+        - updated
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Идентификатор
+        name:
+          type: string
+          description: Название
+        description:
+          type: string
+          description: Описание
+        statusType:
+          type: string
+          description: Статус
+          enum:
+            - NOT_STARTED
+            - IN_PROGRESS
+            - COMPLETE
+        created:
+          type: string
+          format: iso8601
+          description: Дата создания
+        updated:
+          type: string
+          format: iso8601
+          description: Дата создания
+----
+====
+
+.*TaskDto.yaml*
+[%collapsible]
+====
+[source,yaml]
+----
+components:
+  schemas:
+    TaskDto:
+      type: object
+      description: Задача
+      required:
+        - id
+        - name
+        - description
+        - statusType
+        - created
+        - updated
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Идентификатор
+        name:
+          type: string
+          description: Название
+        description:
+          type: string
+          description: Описание
+        statusType:
+          type: string
+          description: Статус
+          enum:
+            - NOT_STARTED
+            - IN_PROGRESS
+            - COMPLETE
+        created:
+          type: string
+          format: iso8601
+          description: Дата создания
+        updated:
+          type: string
+          format: iso8601
+          description: Дата создания
+----
+====
 
 .*archdoc.adoc*
 [%collapsible]

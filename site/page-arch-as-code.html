@@ -1373,9 +1373,9 @@ pre.rouge {
 <pre>/data/my-project/.git # Папка git-репозитория
 /data/my-project/pom.xml # Проект Apache Maven
 /data/my-project/src/main/asciidoc/archdoc.adoc # Документ Asciidoc
-/data/my-project/src/main/resources/database/task.yaml # Описание таблицы "app_task"
-/data/my-project/src/main/resources/database/project.yaml Описание таблицы "app_project"
-/data/my-project/src/main/resources/database/status_type.yaml Описание перечисления "status_type"
+/data/my-project/src/main/resources/database/StatusType.yaml Описание перечисления "status_type"
+/data/my-project/src/main/resources/database/Project.yaml Описание таблицы "app_project"
+/data/my-project/src/main/resources/database/Task.yaml # Описание таблицы "app_task"
 
 /data/my-project/src/main/asciidoc/database.adoc # Сгенерированное описание базы данных
 /data/my-project/src/main/asciidoc/erd_logic.puml # Сгенерированная логическая схема в Plantuml
@@ -1387,14 +1387,14 @@ pre.rouge {
 </div>
 </div>
 <details>
-<summary class="title"><strong>project.yaml</strong></summary>
+<summary class="title"><strong>Project.yaml</strong></summary>
 <div class="content">
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="yaml"><span class="nn">---</span>
 <span class="na">databaseChangeLog</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">changeSet</span><span class="pi">:</span>
-      <span class="na">id</span><span class="pi">:</span> <span class="s">project</span>
+      <span class="na">id</span><span class="pi">:</span> <span class="s">Project</span>
       <span class="na">author</span><span class="pi">:</span> <span class="s">denis.volnenko</span>
       <span class="na">changes</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="na">createTable</span><span class="pi">:</span>
@@ -1449,14 +1449,14 @@ pre.rouge {
 </div>
 </details>
 <details>
-<summary class="title"><strong>task.yaml</strong></summary>
+<summary class="title"><strong>Task.yaml</strong></summary>
 <div class="content">
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="yaml"><span class="nn">---</span>
 <span class="na">databaseChangeLog</span><span class="pi">:</span>
 <span class="pi">-</span> <span class="na">changeSet</span><span class="pi">:</span>
-    <span class="na">id</span><span class="pi">:</span> <span class="s">task</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s">Task</span>
     <span class="na">author</span><span class="pi">:</span> <span class="s">denis.volnenko</span>
     <span class="na">changes</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">createTable</span><span class="pi">:</span>
@@ -1520,14 +1520,14 @@ pre.rouge {
 </div>
 </details>
 <details>
-<summary class="title"><strong>status_type.yaml</strong></summary>
+<summary class="title"><strong>StatusType.yaml</strong></summary>
 <div class="content">
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="yaml"><span class="nn">---</span>
 <span class="na">databaseChangeLog</span><span class="pi">:</span>
 <span class="pi">-</span> <span class="na">changeSet</span><span class="pi">:</span>
-    <span class="na">id</span><span class="pi">:</span> <span class="s">status_type</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s">StatusType</span>
     <span class="na">author</span><span class="pi">:</span> <span class="s">denis.volnenko</span>
     <span class="na">changes</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">createType</span><span class="pi">:</span>
@@ -1583,9 +1583,9 @@ pre.rouge {
                     <span class="nt">&lt;outputJsonFileEnabled&gt;</span>true<span class="nt">&lt;/outputJsonFileEnabled&gt;</span>
                     <span class="nt">&lt;outputYamlFileEnabled&gt;</span>true<span class="nt">&lt;/outputYamlFileEnabled&gt;</span>
                     <span class="nt">&lt;files&gt;</span>
-                        <span class="nt">&lt;file&gt;</span>${project.basedir}/src/main/resources/database/status_type.yaml<span class="nt">&lt;/file&gt;</span>
-                        <span class="nt">&lt;file&gt;</span>${project.basedir}/src/main/resources/database/project.yaml<span class="nt">&lt;/file&gt;</span>
-                        <span class="nt">&lt;file&gt;</span>${project.basedir}/src/main/resources/database/task.yaml<span class="nt">&lt;/file&gt;</span>
+                        <span class="nt">&lt;file&gt;</span>${project.basedir}/src/main/resources/database/StatusType.yaml<span class="nt">&lt;/file&gt;</span>
+                        <span class="nt">&lt;file&gt;</span>${project.basedir}/src/main/resources/database/Project.yaml<span class="nt">&lt;/file&gt;</span>
+                        <span class="nt">&lt;file&gt;</span>${project.basedir}/src/main/resources/database/Task.yaml<span class="nt">&lt;/file&gt;</span>
                     <span class="nt">&lt;/files&gt;</span>
                 <span class="nt">&lt;/configuration&gt;</span>
             <span class="nt">&lt;/plugin&gt;</span>
@@ -1635,18 +1635,148 @@ pre.rouge {
 <div class="content">
 <pre>/data/my-project/.git # Папка git-репозитория
 /data/my-project/pom.xml # Проект Apache Maven
-/data/my-project/src/main/asciidoc/archdoc.adoc # Документ Asciidoc</pre>
+/data/my-project/src/main/asciidoc/archdoc.adoc # Документ Asciidoc
+/data/my-project/src/main/resources/openapi/OpenAPI.yaml # Контекст OpenAPI
+/data/my-project/src/main/resources/openapi/model/ErrorDto.yaml # Модель ErrorDto
+/data/my-project/src/main/resources/openapi/model/ProjectDto.yaml # Модель ProjectDto
+/data/my-project/src/main/resources/openapi/model/TaskDto.yaml # Модель TaskDto</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>Описание контекста</strong></p>
+<details>
+<summary class="title"><strong>OpenAPI.yaml</strong></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="nn">---</span>
+<span class="na">openapi</span><span class="pi">:</span> <span class="s">3.0.4</span>
+<span class="na">info</span><span class="pi">:</span>
+  <span class="na">title</span><span class="pi">:</span> <span class="s">Task Manager</span>
+<span class="na">servers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">https://tm.volnenko.ru/api/</span></code></pre>
 </div>
-<div class="paragraph">
-<p><strong>Описание моделей</strong></p>
 </div>
-<div class="paragraph">
-<p><strong>Описание методов</strong></p>
 </div>
+</details>
+<details>
+<summary class="title"><strong>ErrorDto.dto</strong></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">components</span><span class="pi">:</span>
+  <span class="na">schemas</span><span class="pi">:</span>
+    <span class="na">ErrorDto</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">Ошибка</span>
+      <span class="na">required</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">success</span>
+      <span class="na">properties</span><span class="pi">:</span>
+        <span class="na">success</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">boolean</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Результат выполнения</span>
+        <span class="na">message</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Сообщение об ошибке</span>
+        <span class="na">errorCode</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Код ошибки</span></code></pre>
+</div>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>ProjectDto.yaml</strong></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">components</span><span class="pi">:</span>
+  <span class="na">schemas</span><span class="pi">:</span>
+    <span class="na">ProjectDto</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">Проект</span>
+      <span class="na">required</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">id</span>
+        <span class="pi">-</span> <span class="s">name</span>
+        <span class="pi">-</span> <span class="s">description</span>
+        <span class="pi">-</span> <span class="s">statusType</span>
+        <span class="pi">-</span> <span class="s">created</span>
+        <span class="pi">-</span> <span class="s">updated</span>
+      <span class="na">properties</span><span class="pi">:</span>
+        <span class="na">id</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+          <span class="na">format</span><span class="pi">:</span> <span class="s">uuid</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Идентификатор</span>
+        <span class="na">name</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Название</span>
+        <span class="na">description</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Описание</span>
+        <span class="na">statusType</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Статус</span>
+          <span class="na">enum</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">NOT_STARTED</span>
+            <span class="pi">-</span> <span class="s">IN_PROGRESS</span>
+            <span class="pi">-</span> <span class="s">COMPLETE</span>
+        <span class="na">created</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+          <span class="na">format</span><span class="pi">:</span> <span class="s">iso8601</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Дата создания</span>
+        <span class="na">updated</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+          <span class="na">format</span><span class="pi">:</span> <span class="s">iso8601</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Дата создания</span></code></pre>
+</div>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>TaskDto.yaml</strong></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">components</span><span class="pi">:</span>
+  <span class="na">schemas</span><span class="pi">:</span>
+    <span class="na">TaskDto</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">Задача</span>
+      <span class="na">required</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">id</span>
+        <span class="pi">-</span> <span class="s">name</span>
+        <span class="pi">-</span> <span class="s">description</span>
+        <span class="pi">-</span> <span class="s">statusType</span>
+        <span class="pi">-</span> <span class="s">created</span>
+        <span class="pi">-</span> <span class="s">updated</span>
+      <span class="na">properties</span><span class="pi">:</span>
+        <span class="na">id</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+          <span class="na">format</span><span class="pi">:</span> <span class="s">uuid</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Идентификатор</span>
+        <span class="na">name</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Название</span>
+        <span class="na">description</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Описание</span>
+        <span class="na">statusType</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Статус</span>
+          <span class="na">enum</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">NOT_STARTED</span>
+            <span class="pi">-</span> <span class="s">IN_PROGRESS</span>
+            <span class="pi">-</span> <span class="s">COMPLETE</span>
+        <span class="na">created</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+          <span class="na">format</span><span class="pi">:</span> <span class="s">iso8601</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Дата создания</span>
+        <span class="na">updated</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+          <span class="na">format</span><span class="pi">:</span> <span class="s">iso8601</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">Дата создания</span></code></pre>
+</div>
+</div>
+</div>
+</details>
 <details>
 <summary class="title"><strong>archdoc.adoc</strong></summary>
 <div class="content">
@@ -2052,7 +2182,7 @@ pre.rouge {
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-18 17:04:23 +0400
+Last updated 2025-10-18 19:38:12 +0400
 </div>
 </div>
 </body>
