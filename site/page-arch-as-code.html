@@ -1381,7 +1381,9 @@ pre.rouge {
 /data/my-project/src/main/asciidoc/erd_logic.puml # Сгенерированная логическая схема в Plantuml
 /data/my-project/src/main/asciidoc/erd_logic.svg # Скомпилированная логическая схема в SVG
 /data/my-project/src/main/asciidoc/erd_physic.puml # Сгенерированная физическая схема в Plantuml
-/data/my-project/src/main/asciidoc/erd_physic.svg # Скомпилированная физическая схема в SVG</pre>
+/data/my-project/src/main/asciidoc/erd_physic.svg # Скомпилированная физическая схема в SVG
+/data/my-project/src/main/asciidoc/scheme.json # Скомпилированная мета-модель описания БД в JSON
+/data/my-project/src/main/asciidoc/scheme.yaml # Скомпилированная мета-модель описания БД в YAML</pre>
 </div>
 </div>
 <details>
@@ -1543,6 +1545,68 @@ pre.rouge {
             <span class="pi">-</span> <span class="na">value</span><span class="pi">:</span>
                 <span class="na">name</span><span class="pi">:</span> <span class="s">COMPLETE</span>
                 <span class="na">remarks</span><span class="pi">:</span> <span class="s">Завершено</span></code></pre>
+</div>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>pom.xml</strong></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+         <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+    <span class="nt">&lt;groupId&gt;</span>ru.volnenko.doc<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>my-project<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;packaging&gt;</span>pom<span class="nt">&lt;/packaging&gt;</span>
+
+    <span class="nt">&lt;build&gt;</span>
+        <span class="nt">&lt;plugins&gt;</span>
+           <span class="nt">&lt;plugin&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>ru.volnenko.maven.plugin<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>liquilbase-asciidoc-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;configuration&gt;</span>
+                    <span class="nt">&lt;serviceName&gt;</span>Task Manager<span class="nt">&lt;/serviceName&gt;</span>
+                    <span class="nt">&lt;dataBaseInfo&gt;</span>Postgres 15<span class="nt">&lt;/dataBaseInfo&gt;</span>
+                    <span class="nt">&lt;headerFirstEnabled&gt;</span>false<span class="nt">&lt;/headerFirstEnabled&gt;</span>
+                    <span class="nt">&lt;headerSecondEnabled&gt;</span>true<span class="nt">&lt;/headerSecondEnabled&gt;</span>
+                    <span class="nt">&lt;tableOfContentsEnabled&gt;</span>true<span class="nt">&lt;/tableOfContentsEnabled&gt;</span>
+                    <span class="nt">&lt;outputPath&gt;</span>${project.basedir}/src/main/asciidoc<span class="nt">&lt;/outputPath&gt;</span>
+                    <span class="nt">&lt;outputFile&gt;</span>database.adoc<span class="nt">&lt;/outputFile&gt;</span>
+                    <span class="nt">&lt;outputJsonFileEnabled&gt;</span>true<span class="nt">&lt;/outputJsonFileEnabled&gt;</span>
+                    <span class="nt">&lt;outputYamlFileEnabled&gt;</span>true<span class="nt">&lt;/outputYamlFileEnabled&gt;</span>
+                    <span class="nt">&lt;files&gt;</span>
+                        <span class="nt">&lt;file&gt;</span>${project.basedir}/src/main/resources/database/status_type.yaml<span class="nt">&lt;/file&gt;</span>
+                        <span class="nt">&lt;file&gt;</span>${project.basedir}/src/main/resources/database/project.yaml<span class="nt">&lt;/file&gt;</span>
+                        <span class="nt">&lt;file&gt;</span>${project.basedir}/src/main/resources/database/task.yaml<span class="nt">&lt;/file&gt;</span>
+                    <span class="nt">&lt;/files&gt;</span>
+                <span class="nt">&lt;/configuration&gt;</span>
+            <span class="nt">&lt;/plugin&gt;</span>
+            <span class="nt">&lt;plugin&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>org.asciidoctor<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>asciidoctor-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>2.2.6<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;executions&gt;</span>
+                    <span class="nt">&lt;execution&gt;</span>
+                        <span class="nt">&lt;id&gt;</span>convert-to-html<span class="nt">&lt;/id&gt;</span>
+                        <span class="nt">&lt;phase&gt;</span>generate-resources<span class="nt">&lt;/phase&gt;</span>
+                        <span class="nt">&lt;goals&gt;</span>
+                            <span class="nt">&lt;goal&gt;</span>process-asciidoc<span class="nt">&lt;/goal&gt;</span>
+                        <span class="nt">&lt;/goals&gt;</span>
+                    <span class="nt">&lt;/execution&gt;</span>
+                <span class="nt">&lt;/executions&gt;</span>
+            <span class="nt">&lt;/plugin&gt;</span>
+        <span class="nt">&lt;/plugins&gt;</span>
+    <span class="nt">&lt;/build&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1956,7 +2020,7 @@ pre.rouge {
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-18 15:55:24 +0400
+Last updated 2025-10-18 16:19:27 +0400
 </div>
 </div>
 </body>
