@@ -844,16 +844,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 /data/my-project/src/main/asciidoc/erd_physic.svg # Скомпилированная физическая схема в SVG</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>Файл "project.yaml"</strong></p>
-</div>
+<details>
+<summary class="title"><strong>project.yaml</strong></summary>
+<div class="content">
 <div class="listingblock">
 <div class="content">
-<pre>---
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">---
 databaseChangeLog:
   - changeSet:
       id: project
-      author: liquibase
+      author: denis.volnenko
       changes:
         - createTable:
             schemaName: public
@@ -901,19 +901,21 @@ databaseChangeLog:
                   type: timestampz
                   remarks: Дата обновления
                   constraints:
-                    nullable: false</pre>
+                    nullable: false</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>Файл "task.yaml"</strong></p>
 </div>
+</details>
+<details>
+<summary class="title"><strong>task.yaml</strong></summary>
+<div class="content">
 <div class="listingblock">
 <div class="content">
-<pre>---
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">---
 databaseChangeLog:
 - changeSet:
     id: task
-    author: liquibase
+    author: denis.volnenko
     changes:
       - createTable:
           schemaName: public
@@ -970,15 +972,17 @@ databaseChangeLog:
                 type: timestampz
                 remarks: Дата обновления
                 constraints:
-                  nullable: false</pre>
+                  nullable: false</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>Файл "status_type.yaml"</strong></p>
 </div>
+</details>
+<details>
+<summary class="title"><strong>status_type.yaml</strong></summary>
+<div class="content">
 <div class="listingblock">
 <div class="content">
-<pre>---
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">---
 databaseChangeLog:
 - changeSet:
     id: status_type
@@ -998,9 +1002,11 @@ databaseChangeLog:
                 remarks: В процессе
             - value:
                 name: COMPLETE
-                remarks: Завершено</pre>
+                remarks: Завершено</code></pre>
 </div>
 </div>
+</div>
+</details>
 </div>
 <div class="sect2">
 <h3 id="_4_4_настройка_генерации_документации_rest_api">4.4. Настройка генерации документации rest api</h3>
@@ -1011,7 +1017,7 @@ databaseChangeLog:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-18 02:27:21 +0400
+Last updated 2025-10-18 06:39:21 +0400
 </div>
 </div>
 </body>

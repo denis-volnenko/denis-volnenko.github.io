@@ -275,14 +275,16 @@
 /data/my-project/src/main/asciidoc/erd_physic.svg # Скомпилированная физическая схема в SVG
 ----
 
-*Файл "project.yaml"*
-
+.*project.yaml*
+[%collapsible]
+====
+[source,yaml]
 ----
 ---
 databaseChangeLog:
   - changeSet:
       id: project
-      author: liquibase
+      author: denis.volnenko
       changes:
         - createTable:
             schemaName: public
@@ -332,15 +334,18 @@ databaseChangeLog:
                   constraints:
                     nullable: false
 ----
+====
 
-*Файл "task.yaml"*
-
+.*task.yaml*
+[%collapsible]
+====
+[source,yaml]
 ----
 ---
 databaseChangeLog:
 - changeSet:
     id: task
-    author: liquibase
+    author: denis.volnenko
     changes:
       - createTable:
           schemaName: public
@@ -399,9 +404,12 @@ databaseChangeLog:
                 constraints:
                   nullable: false
 ----
+====
 
-*Файл "status_type.yaml"*
-
+.*status_type.yaml*
+[%collapsible]
+====
+[source,yaml]
 ----
 ---
 databaseChangeLog:
@@ -425,5 +433,6 @@ databaseChangeLog:
                 name: COMPLETE
                 remarks: Завершено
 ----
+====
 
 ### 4.4. Настройка генерации документации rest api
