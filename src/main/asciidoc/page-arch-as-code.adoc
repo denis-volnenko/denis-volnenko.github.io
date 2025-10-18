@@ -772,12 +772,15 @@ components:
       properties:
         success:
           type: boolean
+          title: Результат выполнения
           description: Результат выполнения
         message:
           type: string
+          title: Сообщение об ошибке
           description: Сообщение об ошибке
         errorCode:
           type: string
+          title: Код ошибки
           description: Код ошибки
 ----
 ====
@@ -803,15 +806,19 @@ components:
         id:
           type: string
           format: uuid
+          title: Идентификатор
           description: Идентификатор
         name:
           type: string
+          title: Название
           description: Название
         description:
           type: string
+          title: Описание
           description: Описание
         statusType:
           type: string
+          title: Статус
           description: Статус
           enum:
             - NOT_STARTED
@@ -820,10 +827,12 @@ components:
         created:
           type: string
           format: iso8601
+          title: Дата создания
           description: Дата создания
         updated:
           type: string
           format: iso8601
+          title: Дата создания
           description: Дата создания
 ----
 ====
@@ -849,15 +858,19 @@ components:
         id:
           type: string
           format: uuid
+          title: Идентификатор
           description: Идентификатор
         name:
           type: string
+          title: Название
           description: Название
         description:
           type: string
+          title: Описание
           description: Описание
         statusType:
           type: string
+          title: Статус
           description: Статус
           enum:
             - NOT_STARTED
@@ -866,10 +879,12 @@ components:
         created:
           type: string
           format: iso8601
+          title: Дата создания
           description: Дата создания
         updated:
           type: string
           format: iso8601
+          title: Дата создания
           description: Дата создания
 ----
 ====
