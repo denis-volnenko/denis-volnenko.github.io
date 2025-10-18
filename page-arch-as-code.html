@@ -723,9 +723,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 /data/my-project/src/main/asciidoc/index.adoc # Документ Asciidoc</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>Файл "pom.xml"</strong></p>
-</div>
+<details>
+<summary class="title"><strong>pom.xml</strong></summary>
+<div class="content">
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
@@ -762,14 +762,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 &lt;/project&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>Файл "index.adoc"</strong></p>
 </div>
+</details>
+<details>
+<summary class="title"><strong>index.adoc</strong></summary>
+<div class="content">
 <div class="listingblock">
 <div class="content">
-<pre># Hello World!</pre>
+<pre class="highlight"><code class="language-asciidoc" data-lang="asciidoc"># Hello World!</code></pre>
 </div>
 </div>
+</div>
+</details>
 </div>
 <div class="sect2">
 <h3 id="_4_2_настройка_публикации_документации_в_confluence">4.2. Настройка публикации документации в Confluence</h3>
@@ -783,9 +787,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 /data/my-project/src/main/asciidoc/index.adoc # Документ Asciidoc</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>Файл "pom.xml"</strong></p>
-</div>
+<details>
+<summary class="title"><strong>pom.xml</strong></summary>
+<div class="content">
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
@@ -822,6 +826,30 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 &lt;/project&gt;</code></pre>
 </div>
 </div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>settings.xml</strong></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;
+
+    &lt;servers&gt;
+        &lt;server&gt;
+            &lt;id&gt;confluence&lt;/id&gt;
+            &lt;username&gt;test&lt;/username&gt;
+            &lt;password&gt;1234&lt;/password&gt;
+        &lt;/server&gt;
+    &lt;/servers&gt;
+
+&lt;/settings&gt;</code></pre>
+</div>
+</div>
+</div>
+</details>
 </div>
 <div class="sect2">
 <h3 id="_4_3_настройка_генерации_документации_базы_данных">4.3. Настройка генерации документации базы данных</h3>
@@ -1017,7 +1045,7 @@ databaseChangeLog:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-18 06:39:21 +0400
+Last updated 2025-10-18 06:49:38 +0400
 </div>
 </div>
 </body>

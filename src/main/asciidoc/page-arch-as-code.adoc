@@ -164,8 +164,9 @@
 /data/my-project/src/main/asciidoc/index.adoc # Документ Asciidoc
 ----
 
-*Файл "pom.xml"*
-
+.*pom.xml*
+[%collapsible]
+====
 [source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
@@ -201,12 +202,16 @@
 
 </project>
 ----
+====
 
-*Файл "index.adoc"*
-
+.*index.adoc*
+[%collapsible]
+====
+[source,asciidoc]
 ----
 # Hello World!
 ----
+====
 
 ### 4.2. Настройка публикации документации в Confluence
 
@@ -218,8 +223,9 @@
 /data/my-project/src/main/asciidoc/index.adoc # Документ Asciidoc
 ----
 
-*Файл "pom.xml"*
-
+.*pom.xml*
+[%collapsible]
+====
 [source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
@@ -255,6 +261,28 @@
 
 </project>
 ----
+====
+
+.*settings.xml*
+[%collapsible]
+====
+[source,xml]
+----
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <servers>
+        <server>
+            <id>confluence</id>
+            <username>test</username>
+            <password>1234</password>
+        </server>
+    </servers>
+
+</settings>
+----
+====
 
 ### 4.3. Настройка генерации документации базы данных
 
