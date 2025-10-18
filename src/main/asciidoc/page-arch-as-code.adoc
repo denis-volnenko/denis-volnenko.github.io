@@ -722,5 +722,32 @@ databaseChangeLog:
 
 ### 5.4. Настройка генерации документации rest api
 
+*Структура проекта*
+
+----
+/data/my-project/.git # Папка git-репозитория
+/data/my-project/pom.xml # Проект Apache Maven
+/data/my-project/src/main/asciidoc/archdoc.adoc # Документ Asciidoc
+----
+
+*Описание контекста*
+
+*Описание моделей*
+
+*Описание методов*
+
+.*archdoc.adoc*
+[%collapsible]
+====
+[source,asciidoc]
+----
+ # АРХИТЕКТУРНЫЙ ДОКУМЕНТ
+ :toc:
+ :toc-title: Содержание
+
+ include::openapi.adoc[]
+----
+====
+
 include::page-database.adoc[]
 

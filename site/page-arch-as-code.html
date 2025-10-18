@@ -1628,7 +1628,39 @@ pre.rouge {
 </div>
 <div class="sect2">
 <h3 id="_5_4_настройка_генерации_документации_rest_api">5.4. Настройка генерации документации rest api</h3>
+<div class="paragraph">
+<p><strong>Структура проекта</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>/data/my-project/.git # Папка git-репозитория
+/data/my-project/pom.xml # Проект Apache Maven
+/data/my-project/src/main/asciidoc/archdoc.adoc # Документ Asciidoc</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Описание контекста</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Описание моделей</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Описание методов</strong></p>
+</div>
+<details>
+<summary class="title"><strong>archdoc.adoc</strong></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="asciidoc"> # АРХИТЕКТУРНЫЙ ДОКУМЕНТ
+ :toc:
+ :toc-title: Содержание
 
+ include::openapi.adoc[]</code></pre>
+</div>
+</div>
+</div>
+</details>
 </div>
 </div>
 </div>
@@ -2020,7 +2052,7 @@ pre.rouge {
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-18 16:19:27 +0400
+Last updated 2025-10-18 17:04:23 +0400
 </div>
 </div>
 </body>
