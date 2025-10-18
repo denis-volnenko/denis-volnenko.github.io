@@ -13,3 +13,5 @@ https://github.com/denis-volnenko/openapi-asciidoc-maven-plugin
 ## 2. СТАТЬИ
 
 ### xref:page-arch-as-code.adoc[2.1. АРХИТЕКТУРА КАК КОД]
+
+###№ xref:page-database.adoc[2.1.2. ПРИМЕР ОПИСАНИЯ БАЗЫ ДАННЫХ]
