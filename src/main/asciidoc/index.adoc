@@ -14,9 +14,9 @@ https://github.com/denis-volnenko/openapi-asciidoc-maven-plugin
 
 ==== xref:page-arch-as-code.adoc[2.1. Документация как код]
 
-==== xref:page-database.adoc[2.1.2. Пример описания базы данных]
+===== xref:page-database.adoc[2.1.2. Пример описания базы данных]
 
-==== xref:page-openapi.adoc[2.1.3. Пример описания rest api]
+===== xref:page-openapi.adoc[2.1.3. Пример описания rest api]
 
 ==== xref:page-arch-tests.adoc[2.2. Архитектурные тесты]
 
