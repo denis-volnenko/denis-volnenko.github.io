@@ -98,4 +98,11 @@
         </plugins>
     </build>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>volnenko</id>
+            <url>https://maven.volnenko.ru/repository</url>
+        </pluginRepository>
+    </pluginRepositories>
+
 </project>
